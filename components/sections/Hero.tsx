@@ -1,14 +1,16 @@
-import Button from "../ui/button";
-import AnimatedSvg from "../sections/animatedwavebackground"; 
+import Button from "../ui/Button";
+import AnimatedSvg from "./AnimatedWaveBackground"; 
+import Section from "./Section";
 
 export default function Hero() {
     return (
-        <main className="relative min-h-screen bg-neutral-50 text-neutral-950 overflow-hidden">
+        <div className="relative min-h-screen bg-neutral-50 text-neutral-950 overflow-hidden">
 
             {/* ANIMATED SVG BACKGROUND */}
-            <div className="absolute inset-0 -z0">
+            <div className="pointer-events-none absolute inset-0 z-0">
                 <AnimatedSvg />
             </div>
+
             {/* OPTIONAL: KEEP YOUR GRID OVERLAY ON TOP OF SVG */}
             {/* <div
                 className="absolute inset-0 opacity-[0.015] -z-5"
@@ -18,7 +20,8 @@ export default function Hero() {
                     backgroundSize: "80px 80px",
                 }}
             /> */}
-            <section className="relative max-w-5xl mx-auto px-6 py-24 z-10">
+
+            <Section id="hero" className="relative max-w-5xl mx-auto px-6 py-24 z-10">
                 <div className="flex flex-col items-center text-center">
                     <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
                         Websites that convert. Shopify builds that perform.
@@ -32,7 +35,7 @@ export default function Hero() {
                         <Button variant="secondary">See our work</Button>
                     </div>
                 </div>
-            </section>
-        </main>
+            </Section>
+        </div>
     );
 }

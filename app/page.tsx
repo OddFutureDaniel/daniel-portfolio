@@ -1,28 +1,33 @@
 import Hero from "@/components/sections/Hero";
 import Image from "next/image";
+import Process from "@/components/sections/Process";
 
 export default function Home() {
   return (
-    <>
-    <Hero />
+    <main>
+<>
+      <Hero />
+      <Process />
     </>
-  
+    </main>
+    
+
   );
 }
 
 
-      {/* TODO
+{/* TODO
       Trusted by {Logos of client businesses} */}
 
-      {/* TODO
+{/* TODO
       how we work
       3 cards
       1. DISCOVERY - quick call to discuss requirements
       2. COLLABORATION - Real time updates via dedicated slack channel
       3. DELIVERY - design, build and deploy, most projects shipped in 72 hours
       */}
-      
-      {/* TODO
+
+{/* TODO
       Selected work
       Carousel of project cards worked on.
       touch to slide and click arrow nav
@@ -30,14 +35,14 @@ export default function Home() {
       Lightbox: title, case study description, project image gallery, optional link to live site
       */}
 
-        {/* TODO
+{/* TODO
         Capabiltiies 
         1. fast shipped sites
         2. pixel perfect design
         card showing stats like avg turnaround time, lighthouse score, iterations,
         */}
 
-          {/* TODO
+{/* TODO
           Pricing
           3 card pricing like subscription model cards
           each card, Starter, professional, enterprise, listed features, 
@@ -45,11 +50,11 @@ export default function Home() {
           no hidden fees, you own the code, 
           */}
 
-          {/* TODO
+{/* TODO
           Testimonial message from client
            */}
 
-           {/* TODO
+{/* TODO
            About Us
            4 cards
            1. small bio
@@ -58,14 +63,14 @@ export default function Home() {
            4. code sample of code stack used in a const stack = [frontend: ["Next.js", "React", "TypeScript"]]
            */}
 
-           {/* TODO
+{/* TODO
            Book a Call
            meeting scheduler using cal.com or alt
            easily book a call.
            or reach us directly at; email, number
            */}
 
-           {/* TODO
+{/* TODO
            Footer
            logo, slogan
            Services, company Legal

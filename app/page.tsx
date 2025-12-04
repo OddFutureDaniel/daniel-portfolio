@@ -1,27 +1,15 @@
+import Hero from "@/components/sections/Hero";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-50">
-      <div className="flex flex-col items-center text-center">
-        {/* 
-        TODO:
-        status bar: available for slots/ available for q1 2026
-        <div></div> */}
-        <section className="max-w-5xl mx-auto px-6 py-24">
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
-            Websites that convert. Shopify builds that perform.
-          </h1>
-          <p className="mt-4 text-lg text-neutral-300 max-w-xl">
-            Your site, live in 72 hours. Don't wait for greatness.
-          </p>
-          {/* 
-          TODO
-          CTA buttons:
-          > Start a project
-           > See our Work */}
-        </section>
-      </div>
+    <>
+    <Hero />
+    </>
+  
+  );
+}
+
 
       {/* TODO
       Trusted by {Logos of client businesses} */}
@@ -82,7 +70,3 @@ export default function Home() {
            logo, slogan
            Services, company Legal
             */}
-    </main>
-  )
-}
-

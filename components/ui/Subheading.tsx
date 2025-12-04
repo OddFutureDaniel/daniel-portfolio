@@ -12,7 +12,7 @@ type SubheadingProps = {
     className = "",
   }: SubheadingProps) {
     const sizeClasses = {
-      sm: "text-lg",
+      sm: "text-sm",
       md: "text-xl",
       lg: "text-4xl",
     }[size];

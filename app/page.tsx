@@ -1,31 +1,23 @@
 import Hero from "@/components/sections/Hero";
-import Image from "next/image";
 import Process from "@/components/sections/Process";
+import BackgroundWaves from "@/components/sections/BackgroundWaves";
+import Pricing from "@/components/sections/Pricing";
 
 export default function Home() {
   return (
-    <main>
-<>
-      <Hero />
-      <Process />
-    </>
-    </main>
-    
-
+    <div className="relative bg-neutral-50 text-neutral-950 overflow-hidden">
+      <BackgroundWaves />
+      <main className="flex flex-col items-center justify-center relative z-10">
+        <Hero />
+        <Process />
+        <Pricing />
+      </main>
+    </div>
   );
 }
 
-
 {/* TODO
       Trusted by {Logos of client businesses} */}
-
-{/* TODO
-      how we work
-      3 cards
-      1. DISCOVERY - quick call to discuss requirements
-      2. COLLABORATION - Real time updates via dedicated slack channel
-      3. DELIVERY - design, build and deploy, most projects shipped in 72 hours
-      */}
 
 {/* TODO
       Selected work
@@ -41,14 +33,6 @@ export default function Home() {
         2. pixel perfect design
         card showing stats like avg turnaround time, lighthouse score, iterations,
         */}
-
-{/* TODO
-          Pricing
-          3 card pricing like subscription model cards
-          each card, Starter, professional, enterprise, listed features, 
-          one listed as most popular
-          no hidden fees, you own the code, 
-          */}
 
 {/* TODO
           Testimonial message from client

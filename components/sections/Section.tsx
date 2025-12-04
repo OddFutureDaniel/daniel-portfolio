@@ -11,8 +11,8 @@ type SectionProps = {
         className={`
           w-full
           max-w-5xl mx-auto   /* centers horizontally */
-          px-6                /* global side padding */
-          py-24               /* vertical spacing */
+          px-8                /* global side padding */
+          py-16               /* vertical spacing */
           ${className}
         `}
       >

@@ -20,7 +20,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #fafafa;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -35,7 +35,7 @@ body {
 
 .animated-svg svg {
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   opacity: 0;
 }
 

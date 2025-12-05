@@ -2,15 +2,17 @@ import Hero from "@/components/sections/Hero";
 import Process from "@/components/sections/Process";
 import BackgroundWaves from "@/components/sections/BackgroundWaves";
 import Pricing from "@/components/sections/Pricing";
+import About from "@/components/sections/About";
 
 export default function Home() {
   return (
     <div className="relative bg-neutral-50 text-neutral-950 overflow-hidden">
       <BackgroundWaves />
-      <main className="flex flex-col items-center justify-center relative z-10">
+      <main className="flex flex-col items-center justify-center relative z-10 px-8 md:px-35 ">
         <Hero />
         <Process />
         <Pricing />
+        <About />
       </main>
     </div>
   );

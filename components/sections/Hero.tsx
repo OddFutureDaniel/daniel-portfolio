@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <Section
       id="hero"
-      className="relative min-h-screen max-w-5xl mx-auto px-6  flex flex-col items-center text-center z-10"
+      className="relative min-h-screen max-w-5xl mx-auto px-6 py-50 flex flex-col items-center text-center z-10"
     >
       <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
         Websites that convert. Shopify builds that perform.

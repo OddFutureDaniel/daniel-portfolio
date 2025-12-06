@@ -1,5 +1,6 @@
 import Subheading from "../ui/Subheading";
 import Section from "./Section";
+import AnimatedNumber from "@/components/ui/AnimatedNumber";
 
 export default function About() {
     return (
@@ -45,14 +46,14 @@ export default function About() {
                 </div>
                 <div className="md:col-span-5 bg-black rounded-2xl p-8 md:p-10 text-white">
                     <Subheading className="text-white/60" align="left">By the numbers</Subheading>
-                    <div className="grid grid-cols-2 gap-8"><div>
-                        <div className="text-3xl md:text-4xl font-semibold tracking-tight">4+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8"><div>
+                        <div className="text-3xl md:text-4xl font-semibold tracking-tight"><AnimatedNumber end={4} duration={3}/>+
                         </div>
                         <div className="text-xs text-white/40 mt-1 uppercase tracking-wider">Years Exp.
                         </div>
                     </div>
                         <div>
-                            <div className="text-3xl md:text-4xl font-semibold tracking-tight">72
+                            <div className="text-3xl md:text-4xl font-semibold tracking-tight"><AnimatedNumber end={72} duration={5}/>
                                 <span className="text-sm font-normal text-white/40">hr
                                 </span>
                             </div>
@@ -60,13 +61,13 @@ export default function About() {
                             </div>
                         </div>
                         <div>
-                            <div className="text-3xl md:text-4xl font-semibold tracking-tight">10+
+                            <div className="text-3xl md:text-4xl font-semibold tracking-tight"><AnimatedNumber end={10} duration={4}/>+
                             </div>
                             <div className="text-xs text-white/40 mt-1 uppercase tracking-wider">Projects
                             </div>
                         </div>
                         <div>
-                            <div className="text-3xl md:text-4xl font-semibold tracking-tight">90
+                            <div className="text-3xl md:text-4xl font-semibold tracking-tight"><AnimatedNumber end={90} duration={4}/>
                             </div>
                             <div className="text-xs text-white/40 mt-1 uppercase tracking-wider">Lighthouse
                             </div>
@@ -87,7 +88,7 @@ export default function About() {
                                 <div className="h-3 w-3 rounded-full bg-[#28ca42]">
                                 </div>
                             </div>
-                            <span className="ml-3 text-[11px] font-mono text-white/40">stack.config.ts
+                            <span className="ml-3 text-[11px] font-mono text-white/40">stack.config.tsx
                             </span>
                         </div>
                         <div className="flex items-center gap-2">
@@ -102,8 +103,8 @@ export default function About() {
                         </div>
                     </div>
                     <div className="p-5 font-mono text-[13px] leading-relaxed text-left">
-                        <div className="text-[#569cd6]">const
-                            <span className="text-[#4fc1ff]">stack
+                        <div className="text-[#569cd6]">const 
+                            <span className="text-[#4fc1ff]"> stack
                             </span> =
                             <span className="text-[#dcdcaa]">
                             </span>
@@ -123,7 +124,7 @@ export default function About() {
                             </span>
                             <span className="text-white/60">:
                             </span>
-                            <span className="text-[#ce9178]">["Tailwind", "Framer Motion"]
+                            <span className="text-[#ce9178]">["Tailwind", "Motion.dev"]
                             </span>
                             <span className="text-white/60">,
                             </span>

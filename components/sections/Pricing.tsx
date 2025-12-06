@@ -6,11 +6,12 @@ import Section from "./Section";
 export default function Pricing() {
     return (
         <Section
+        
             className="relative min-h-screen max-w-full px-8  flex flex-col items-center text-center z-10"
             id="pricing">
             {/* Linear Grid Background */}
             <div
-                className="absolute inset-0 opacity-[0.015] -z-5"
+                className="absolute inset-0 opacity-[0.016] -z-5"
                 style={{
                     backgroundImage:
                         "linear-gradient(to right, #000 2px, transparent 2.5px), linear-gradient(to bottom, #000 2.5px, transparent 1px)",

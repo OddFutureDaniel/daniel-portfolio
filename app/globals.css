@@ -48,7 +48,7 @@ body {
 
 @keyframes cursor-move {
   0% {
-    transform: translate(900%, 170%);
+    transform: translate(800%, 170%);
     opacity: 1;
   }
   40% {

@@ -8,6 +8,7 @@ import Footer from "@/components/sections/Footer";
 import { motion } from "motion/react"
 import Header from "@/components/sections/Header";
 import Faqs from "@/components/sections/FAQs";
+import Projects from "@/components/sections/Projects";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
 
                         <Process />
                         <motion.ul animate={{ rotate: 360 }} />
+                        <Projects/>
                         <Pricing />
                         <About />
                         <Faqs/>
@@ -40,12 +42,6 @@ export default function Home() {
       Lightbox: title, case study description, project image gallery, optional link to live site
       */}
 
-{/* TODO
-        Capabiltiies 
-        1. fast shipped sites
-        2. pixel perfect design
-        card showing stats like avg turnaround time, lighthouse score, iterations,
-        */}
 
 {/* TODO
           Testimonial message from client

@@ -43,3 +43,29 @@ body {
   stroke: white;
   stroke-width: 2px;
 }
+
+/* floating cursor css */
+
+@keyframes cursor-move {
+  0% {
+    transform: translate(900%, 170%);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(520%, 250%);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(520%, 250%); /* pause in middle */
+    opacity: 1;
+  }
+  100% {
+    transform: translate(430%, 450%);
+    opacity: 0;
+  }
+}
+
+/* utility class for the cursor */
+.cursor-anim {
+  animation: cursor-move 3s ease-in-out infinite;
+}

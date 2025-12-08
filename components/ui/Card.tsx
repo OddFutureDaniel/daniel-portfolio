@@ -87,9 +87,9 @@ export function CardDescription({
   className = "",
 }: CardDescriptionProps) {
   return (
-    <p className={`text-neutral-600 mt-2 text-sm leading-relaxed ${className}`}>
+    <div className={`text-neutral-600 mt-2 text-sm leading-relaxed ${className}`}>
       {children}
-    </p>
+      </div>
   );
 }
 

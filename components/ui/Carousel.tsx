@@ -28,30 +28,34 @@ type CarouselProps = {
 
 const DRAG_THRESHOLD = 60;
 
+// Build a deck where index 1 is the "active" card, index 0 is previous
+function buildInitialDeck(slides: React.ReactNode[]): React.ReactNode[] {
+  if (!slides || slides.length <= 1) return slides;
+  const last = slides[slides.length - 1];
+  const rest = slides.slice(0, slides.length - 1);
+  return [last, ...rest]; 
+}
+
 const Carousel = forwardRef<CarouselHandle, CarouselProps>(
   ({ slides, ariaLabel = "Carousel", className = "" }, ref) => {
     const regionId = useId();
     const trackRef = useRef<HTMLDivElement | null>(null);
 
-    // Internal deck
-    const [deck, setDeck] = useState<React.ReactNode[]>(slides);
+    const [deck, setDeck] = useState<React.ReactNode[]>(() =>
+      buildInitialDeck(slides),
+    );
     const total = deck.length;
 
-    // Motion value for x translation
     const x = useMotionValue(0);
-
-    // Measured slide width
     const [slideWidth, setSlideWidth] = useState(0);
-
-    // Guard so it doesntt start a new animation while one is running
     const [isAnimating, setIsAnimating] = useState(false);
 
-    // If the slides prop ever changes, reset the deck
+  
     useEffect(() => {
-      setDeck(slides);
+      setDeck(buildInitialDeck(slides));
     }, [slides]);
 
-    // Measure the width of a single slide so can move in px
+    // Measure slide width once deck is rendered
     useEffect(() => {
       if (!trackRef.current) return;
 
@@ -68,17 +72,31 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(
       return () => window.removeEventListener("resize", updateWidth);
     }, []);
 
-    const rotateNext = () => {
+
+    useEffect(() => {
+      if (!slideWidth || isAnimating) return;
+
+      if (total > 1) {
+        x.set(-slideWidth);
+      } else {
+        x.set(0);
+      }
+    }, [slideWidth, total, isAnimating, x]);
+
+    const rotateLeft = () => {
       setDeck((prev) => {
         if (prev.length <= 1) return prev;
-        return [...prev.slice(1), prev[0]];
+        const [first, ...rest] = prev;
+        return [...rest, first];
       });
     };
 
-    const rotatePrev = () => {
+    const rotateRight = () => {
       setDeck((prev) => {
         if (prev.length <= 1) return prev;
-        return [prev[prev.length - 1], ...prev.slice(0, -1)];
+        const last = prev[prev.length - 1];
+        const rest = prev.slice(0, prev.length - 1);
+        return [last, ...rest];
       });
     };
 
@@ -86,14 +104,15 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(
       if (!slideWidth || isAnimating || total <= 1) return;
       setIsAnimating(true);
 
-      // Animate from current x to -slideWidth
-      animate(x, -slideWidth, {
+      // Rest x = -slideWidth (deck[1] centred)
+      // Next: animate to -2 * slideWidth (deck[2] centred)
+      animate(x, -2 * slideWidth, {
         type: "spring",
         stiffness: 260,
         damping: 30,
         onComplete: () => {
-          rotateNext();
-          x.set(0); // snap back without user seeing
+          rotateLeft();
+          x.set(-slideWidth);
           setIsAnimating(false);
         },
       });
@@ -103,20 +122,20 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(
       if (!slideWidth || isAnimating || total <= 1) return;
       setIsAnimating(true);
 
-      // Animate from current x to +slideWidth
-      animate(x, slideWidth, {
+      // Rest x = -slideWidth (deck[1] centred)
+      // Prev: animate to 0 (deck[0] centred)
+      animate(x, 0, {
         type: "spring",
         stiffness: 260,
         damping: 30,
         onComplete: () => {
-          rotatePrev();
-          x.set(0);
+          rotateRight();
+          x.set(-slideWidth);
           setIsAnimating(false);
         },
       });
     };
 
-    // Expose controls to parent, currently project.tsx
     useImperativeHandle(ref, () => ({
       next,
       prev,
@@ -130,21 +149,18 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(
 
       const offsetX = info.offset.x;
 
-      // Dragged left → next
       if (offsetX < -DRAG_THRESHOLD) {
         next();
         return;
       }
 
-      // Dragged right → prev
       if (offsetX > DRAG_THRESHOLD) {
         prev();
         return;
       }
 
-     
       setIsAnimating(true);
-      animate(x, 0, {
+      animate(x, total > 1 ? -slideWidth : 0, {
         type: "spring",
         stiffness: 260,
         damping: 30,
@@ -174,7 +190,7 @@ const Carousel = forwardRef<CarouselHandle, CarouselProps>(
               <div
                 key={index}
                 data-carousel-slide
-                className="shrink-0 px-4 w-[380px] md:w-[418px]  h-[380px]"
+                className="shrink-0 px-4 w-[380px] md:w-[418px] h-[380px]"
                 role="group"
                 aria-roledescription="slide"
                 aria-label={`Slide ${index + 1} of ${total}`}

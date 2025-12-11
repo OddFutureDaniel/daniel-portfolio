@@ -1,5 +1,5 @@
 import Subheading from "../ui/Subheading";
-import Section from "./Section";
+import Section from "../ui/Section";
 import {
     Accordion,
     AccordionItem,

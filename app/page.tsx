@@ -9,6 +9,7 @@ import { motion } from "motion/react"
 import Header from "@/components/sections/Header";
 import Faqs from "@/components/sections/FAQs";
 import Projects from "@/components/sections/Projects";
+import Testimonial from "@/components/sections/Testimonial";
 
 
 export default function Home() {
@@ -16,10 +17,10 @@ export default function Home() {
             <div className="relative bg-neutral-50 text-neutral-950 overflow-hidden">
                   <BackgroundWaves />
                   <Header />
-                  <main className="flex flex-col items-center justify-center relative z-10 px-8 md:px-35 ">
+                  <main className="flex flex-col items-center justify-center relative z-10 px-8  ">
                         <Hero />
-
                         <Process />
+                        <Testimonial/>
                         <motion.ul animate={{ rotate: 360 }} />
                         <Projects/>
                         <Pricing />

@@ -30,7 +30,7 @@ type SubheadingProps = {
     return (
       <h2
         className={`
-          font-semibold tracking-tight text-neutral-700
+            text-neutral-500
           ${sizeClasses}
           text-${align}
           ${className}

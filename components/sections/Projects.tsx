@@ -1,3 +1,4 @@
+"use client";
 import { useRef } from "react";
 import Carousel, { CarouselHandle } from "@/components/ui/Carousel";
 import Image from "next/image";

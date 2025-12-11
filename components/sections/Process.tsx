@@ -1,9 +1,7 @@
 import Subheading from "../ui/Subheading"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";
 import Section from "../ui/Section";
-import { useRef } from "react";
 export default function Process() {
-    const cursorRef = useRef<HTMLDivElement>(null);
     return (
         <Section id="process"
             className="relative min-h-screen max-w-full px-8  flex flex-col items-center text-center z-10">

@@ -1,3 +1,4 @@
+"use client";
 import { useScrollHide } from "@/components/ui/UseScrollDirection";
 export default function Header() {
     const hidden = useScrollHide(80);
@@ -9,7 +10,8 @@ export default function Header() {
                 `}
         >
             <div className="mx-auto flex max-w-[92%] md:max-w-4xl items-center justify-between px-5 py-2.5 md:px-6 md:py-3 rounded-full transition-all duration-300 bg-white/60 backdrop-blur-md border border-neutral-200/40">
-                <a className="inline-flex items-center gap-2" href="/">
+                <a className="text-neutral-600 text-lg font-medium inline-flex items-center gap-2" href="/">
+                Daniel Rogerson
                 </a>
                 <nav className="hidden md:flex items-center gap-1">
                     <a className="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-black transition-colors rounded-full hover:bg-neutral-100/80" href="/#previous-work">Work</a>

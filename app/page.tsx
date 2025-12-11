@@ -1,16 +1,13 @@
-"use client";
 import Hero from "@/components/sections/Hero";
 import Process from "@/components/sections/Process";
 import BackgroundWaves from "@/components/sections/BackgroundWaves";
 import Pricing from "@/components/sections/Pricing";
 import About from "@/components/sections/About";
 import Footer from "@/components/sections/Footer";
-import { motion } from "motion/react"
 import Header from "@/components/sections/Header";
 import Faqs from "@/components/sections/FAQs";
 import Projects from "@/components/sections/Projects";
 import Testimonial from "@/components/sections/Testimonial";
-
 
 export default function Home() {
       return (
@@ -21,7 +18,6 @@ export default function Home() {
                         <Hero />
                         <Process />
                         <Testimonial/>
-                        <motion.ul animate={{ rotate: 360 }} />
                         <Projects/>
                         <Pricing />
                         <About />
@@ -31,18 +27,6 @@ export default function Home() {
             </div>
       );
 }
-
-{/* TODO
-      Trusted by {Logos of client businesses} */}
-
-{/* TODO
-      Selected work
-      Carousel of project cards worked on.
-      touch to slide and click arrow nav
-      each card opens a lightbox 
-      Lightbox: title, case study description, project image gallery, optional link to live site
-      */}
-
 
 {/* TODO
           Testimonial message from client

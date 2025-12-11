@@ -1,5 +1,5 @@
 import Button from "../ui/Button";
-import Section from "./Section";
+import Section from "../ui/Section";
 
 export default function Hero() {
   return (

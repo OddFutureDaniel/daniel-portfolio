@@ -26,8 +26,8 @@ export function Card({
       className={`
         rounded-2xl border border-neutral-200 
         bg-white/50 backdrop-blur-sm 
-        shadow-sm transition-shadow
-        hover:shadow-md
+         transition-shadow
+        
         
         ${sizeClasses[size]}
         ${className}
@@ -68,7 +68,7 @@ export function CardTitle({
     <h3
       className={`
         ${alignClasses[align]}
-        text-xl font-semibold text-neutral-900 tracking-tight 
+        text-xl  text-neutral-900  
         ${className}
       `}
     >
@@ -87,7 +87,7 @@ export function CardDescription({
   className = "",
 }: CardDescriptionProps) {
   return (
-    <div className={`text-neutral-600 mt-2 text-sm leading-relaxed ${className}`}>
+    <div className={`text-neutral-400 mt-2 text-sm leading-relaxed ${className}`}>
       {children}
       </div>
   );
@@ -99,7 +99,7 @@ type CardContentProps = {
 };
 
 export function CardContent({ children, className = "" }: CardContentProps) {
-  return <div className={`p-6 pt-0 ${className}`}>{children}</div>;
+  return <div className={`pt-0 ${className}`}>{children}</div>;
 }
 
 type CardFooterProps = {

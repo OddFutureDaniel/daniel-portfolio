@@ -11,7 +11,7 @@ import {
 import Subheading from "@/components/ui/Subheading";
 
 const slides = [
-    <Card key="1" className="h-full flex flex-col overflow-hidden">
+    <Card key="1" className="h-full flex flex-col overflow-hidden hover:shadow-md">
         <div className="relative flex-3 w-full bg-neutral-200">
             <Image
                 src="/projects/Jaffa Saba Shopify Portfolio Site Project.png"
@@ -29,14 +29,14 @@ const slides = [
                 Shopify · E-commerce · GA4
             </Subheading>
             <CardHeader className="p-0">
-                <h3 className="text-base md:text-lg font-medium">Glow IV Drips</h3>
+                <h3 className="text-base md:text-lg font-medium">Jaffa Saba</h3>
                 <CardDescription className="mt-1 text-sm text-neutral-600">
-                    Custom booking-integrated Shopify build for a London IV clinic.
+                    A Shopify e-commerce & portfolio site for multidisciplinary artist Jaffa Saba
                 </CardDescription>
             </CardHeader>
         </CardContent>
     </Card>,
-    <Card key="2" className="h-full flex flex-col overflow-hidden">
+    <Card key="2" className="h-full flex flex-col overflow-hidden hover:shadow-md">
         <div className="relative flex-3 w-full bg-neutral-200" >
             <Image
                 src="/projects/ESTIE SHopify E-commerce Website.png"
@@ -61,7 +61,7 @@ const slides = [
             </CardHeader>
         </CardContent>
     </Card>,
-    <Card key="3" className="h-full flex flex-col overflow-hidden">
+    <Card key="3" className="h-full flex flex-col overflow-hidden hover:shadow-md">
         <div className="relative flex-3 w-full bg-neutral-200"
         >
             <Image
@@ -87,7 +87,7 @@ const slides = [
             </CardHeader>
         </CardContent>
     </Card>,
-    <Card key="4" className="h-full flex flex-col overflow-hidden">
+    <Card key="4" className="h-full flex flex-col overflow-hidden hover:shadow-md">
         <div className="relative flex-3 w-full bg-neutral-200"
         >
             <Image
@@ -113,7 +113,7 @@ const slides = [
             </CardHeader>
         </CardContent>
     </Card>,
-    <Card key="5" className="h-full flex flex-col overflow-hidden">
+    <Card key="5" className="h-full flex flex-col overflow-hidden hover:shadow-md">
         <div className="relative flex-3 w-full bg-neutral-200"  >
             <Image
                 src="/projects/Skynmaps Clinic Shopify Site.png"
@@ -138,7 +138,7 @@ const slides = [
             </CardHeader>
         </CardContent>
     </Card>,
-    <Card key="6" className="h-full flex flex-col overflow-hidden">
+    <Card key="6" className="h-full flex flex-col overflow-hidden hover:shadow-md">
         <div className="relative flex-3 w-full bg-neutral-200"
         >
             <Image
@@ -174,14 +174,14 @@ export default function Projects() {
     const handleNext = () => carouselRef.current?.next();
 
     return (
-        <section className="w-full">
-            <div className="max-w-5xl mx-auto space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                    <div className="min-w-0 text-left">
-                        <Subheading align="left">Selected work</Subheading>
-                        <p className="text-sm text-neutral-600">
-                            A few recent projects shipped for clients.
-                        </p>
+        <section className="w-full mt-20">
+            <div className="w-full space-y-4">
+                <div className="flex  flex-wrap items-center px-8 md:px-35 w-full justify-between gap-3">
+                    <div className="flex flex-col mb-2 md:mb-10">
+                        <Subheading className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 font-medium" align="left">Selected work
+                        </Subheading>
+                        <Subheading className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!" align="left">A few recent projects <br /> shipped for clients
+                        </Subheading>
                     </div>
                     <div className="flex w-full shrink-0 justify-start gap-2 md:w-auto md:justify-end">
                         <button
@@ -204,7 +204,7 @@ export default function Projects() {
                 </div>
             </div>
 
-            <div className="mt-4 -mx-8 md:-mx-35">
+            <div className="mt-4 -mx-8 ">
                 <Carousel
                     ref={carouselRef}
                     slides={slides}

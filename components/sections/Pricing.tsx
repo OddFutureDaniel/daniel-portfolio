@@ -471,7 +471,7 @@ export default function Pricing() {
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.12 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
         >
           <div className="flex items-center gap-2 text-sm text-neutral-500">
             <svg

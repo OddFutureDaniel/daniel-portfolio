@@ -8,6 +8,7 @@ import Header from "@/components/sections/Header";
 import Faqs from "@/components/sections/FAQs";
 import Projects from "@/components/sections/Projects";
 import Testimonial from "@/components/sections/Testimonial";
+import BookACall from "@/components/sections/BookACall";
 
 export default function Home() {
       return (
@@ -17,24 +18,14 @@ export default function Home() {
                   <main className="flex flex-col items-center justify-center relative z-10 px-8  ">
                         <Hero />
                         <Process />
-                        <Testimonial/>
-                        <Projects/>
+                        <Testimonial />
+                        <Projects />
                         <Pricing />
                         <About />
-                        <Faqs/>
+                        <BookACall />
+                        <Faqs />
                   </main>
                   <Footer />
             </div>
       );
 }
-
-{/* TODO
-          Testimonial message from client
-           */}
-
-{/* TODO
-           Book a Call
-           meeting scheduler using cal.com or alt
-           easily book a call.
-           or reach us directly at; email, number
-           */}

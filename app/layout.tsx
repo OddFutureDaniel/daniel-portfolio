@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
-import FollowPointer from "@/components/sections/FollowPointer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,11 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <GoogleTagManager gtmId="GTM-T56NNVGR" />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
-        {/* <FollowPointer/> */}
+        
       </body>
     </html>
   );

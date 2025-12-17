@@ -9,6 +9,7 @@ import Faqs from "@/components/sections/FAQs";
 import Projects from "@/components/sections/Projects";
 import Testimonial from "@/components/sections/Testimonial";
 import BookACall from "@/components/sections/BookACall";
+import { dd } from "motion/react-client";
 
 export default function Home() {
       return (
@@ -29,3 +30,32 @@ export default function Home() {
             </div>
       );
 }
+
+{/* TODO
+       
+      - LOGO
+      - fix header links
+      - fix mobile header links
+      - connect hero cta buttons
+      - restyle PROJECTS nav buttons
+      - make PROJECTS carousel scrollable on desktop, probs have to give up infinite scroll
+      - edit PRICING features
+      - make middle PRICING feature colour inverted for most popular
+      - link pricing CTA buttons to calendar
+      - PROJECTS descriptions and tags
+      - PRICING cards font sizes and colours
+      - fill box 3 in ABOUT US
+      - Do more FAQS
+      - Finalise transitions especially for CTA's 
+      - FOOTER links
+
+      THEN DEPLOY
+      
+      FINAL TODO:
+
+      - go over all elements and do a11y
+      - SEO best practices
+      - 
+
+      
+      */}

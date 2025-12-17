@@ -174,7 +174,7 @@ export default function Projects() {
 
   return (
     <motion.section
-      className="w-full mt-20"
+      className="w-full py-20 bg-neutral-100 -mx-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}

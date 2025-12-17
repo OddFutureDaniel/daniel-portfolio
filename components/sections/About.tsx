@@ -72,15 +72,17 @@ export default function About() {
               <h3 className="text-xl font-semibold mb-4">Who we are</h3>
               <div className="space-y-4 text-neutral-600 leading-relaxed">
                 <p>
-                  We're a small team of designers and developers who care about
-                  getting things right. Between us, we've spent years building
-                  sites for artists, startups, and brands that need to make an
-                  impression.
+                  THIRDLINE designs and builds websites for brands that need to perform as well as they look.
+                   The work combines design, development and commercial awareness, 
+                   with a particular focus on Shopify and e-commerce.
                 </p>
                 <p>
-                  Portfolios, product sites, and high-conversion landers for
-                  SaaS and iOS apps. Built with intention. Delivered fast.
+                We work with artists, clinics and growing brands that value reliability and want to make an impression.
+                 Our experience spans e-commerce and portfolio sites, 
+                 with a focus on measurable conversion and performance. 
+                 Long-term client relationships matter, as does building work that’s straightforward to run once live.
                 </p>
+                <p>Built with intent. Made to last.</p>
               </div>
               <div className="mt-8 flex flex-wrap gap-2">
                 <span className="rounded-full bg-white border border-neutral-200 px-3 py-1 text-xs font-medium text-neutral-600">

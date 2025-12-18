@@ -7,7 +7,8 @@ type SectionProps = {
   children: ReactNode;
   className?: string;
   id?: string;
-  animateOnScroll?: boolean;   // optional toggle
+  animateOnScroll?: boolean;
+  flush?: boolean;
 };
 
 export default function Section({
@@ -15,23 +16,19 @@ export default function Section({
   className = "",
   id,
   animateOnScroll = true,
+  flush = false,
 }: SectionProps) {
   const prefersReducedMotion = useReducedMotion();
 
-  // If reduced-motion is enabled OR animations disabled → render normally
+  const base = `
+    w-full
+    ${flush ? "" : "px-8 md:px-35 py-16"}
+    ${className}
+  `;
+
   if (prefersReducedMotion || !animateOnScroll) {
     return (
-      <section
-        id={id}
-        className={`
-          w-full
-          max-w-5xl mx-auto
-          px-8
-          md:px-35
-          py-16
-          ${className}
-        `}
-      >
+      <section id={id} className={base}>
         {children}
       </section>
     );
@@ -40,18 +37,11 @@ export default function Section({
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 24 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }} 
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className={`
-        w-full
-        max-w-5xl mx-auto
-        px-8
-        md:px-35
-        py-16
-        ${className}
-      `}
+      className={base}
     >
       {children}
     </motion.section>

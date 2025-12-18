@@ -86,3 +86,12 @@ body {
     opacity: 1;
   }
 }
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+@font-face {
+  font-family: neuehass;
+  src: url(/my-portfolio/public/fonts/Neue-Haas-Grotesk-Display-Pro-75-Bold.ttf);
+}

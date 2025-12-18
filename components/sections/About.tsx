@@ -33,10 +33,10 @@ export default function About() {
                 className="uppercase tracking-[0.2em] mb-2"
                 align="left"
               >
-                about us
+                Position
               </Subheading>
               <Subheading size="lg" align="left">
-                Small Team <br /> Big Results
+                Built with intent. Made to last.
               </Subheading>
             </div>
             <p>We design what we build, and we build what ships.</p>
@@ -72,17 +72,14 @@ export default function About() {
               <h3 className="text-xl font-semibold mb-4">Who we are</h3>
               <div className="space-y-4 text-neutral-600 leading-relaxed">
                 <p>
-                  THIRDLINE designs and builds websites for brands that need to perform as well as they look.
-                   The work combines design, development and commercial awareness, 
-                   with a particular focus on Shopify and e-commerce.
+                  THIRD LINE initiates and executes digital work for brands that value clarity, reliability and control.
+                  </p>
+                  <p>
+                  The focus is on Shopify and e-commerce, combining design, development and commercial awareness into systems that perform without unnecessary complexity.
+                  </p>
+                  <p>
+                  Work is delivered quickly, structured carefully and built to be straightforward to run once live.
                 </p>
-                <p>
-                We work with artists, clinics and growing brands that value reliability and want to make an impression.
-                 Our experience spans e-commerce and portfolio sites, 
-                 with a focus on measurable conversion and performance. 
-                 Long-term client relationships matter, as does building work that’s straightforward to run once live.
-                </p>
-                <p>Built with intent. Made to last.</p>
               </div>
               <div className="mt-8 flex flex-wrap gap-2">
                 <span className="rounded-full bg-white border border-neutral-200 px-3 py-1 text-xs font-medium text-neutral-600">
@@ -114,7 +111,7 @@ export default function About() {
                 transition={{ duration: 0.45, ease: "easeOut", delay: 0.1 }}
               >
                 <Subheading className="text-white/60" align="left">
-                  By the numbers
+                 In practice
                 </Subheading>
               </motion.div>
 
@@ -245,7 +242,7 @@ export default function About() {
                 <div className="pl-4">
                   <span className="text-[#9cdcfe]">styling</span>
                   <span className="text-white/60">:</span>
-                  <span className="text-[#ce9178']">
+                  <span className="text-[#ce9178]">
                     {` ["Tailwind", "Motion.dev"]`}
                   </span>
                   <span className="text-white/60">,</span>

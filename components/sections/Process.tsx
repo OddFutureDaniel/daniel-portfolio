@@ -10,6 +10,7 @@ import {
     CardContent,
 } from "@/components/ui/Card";
 import Section from "../ui/Section";
+import { neueHaasDisplay } from "@/app/fonts";
 
 export default function Process() {
     return (
@@ -29,14 +30,14 @@ export default function Process() {
                     className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 font-medium"
                     align="left"
                 >
-                    How We Work
+                    Process
                 </Subheading>
 
                 <Subheading
-                    className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!"
+                    className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`}
                     align="left"
                 >
-                    A simple process, <br /> exceptional results
+                    From initiation to execution
                 </Subheading>
             </motion.div>
 
@@ -65,7 +66,7 @@ export default function Process() {
                                     1
                                 </span>
                                 <CardTitle className="text-xs uppercase tracking-wider text-neutral-400 font-medium">
-                                    Discovery
+                                    Initiation
                                 </CardTitle>
                             </CardHeader>
                         </motion.div>
@@ -79,7 +80,7 @@ export default function Process() {
                         >
                             <CardDescription>
                                 <Subheading className="text-[16px] text-neutral-500 leading-relaxed mb-8">
-                                    30-minute chat to understand your goals, timeline, and success criteria.
+                                    A conversation to define the problem, scope and direction.
                                 </Subheading>
                             </CardDescription>
                         </motion.div>
@@ -151,7 +152,7 @@ export default function Process() {
                                     2
                                 </span>
                                 <CardTitle className="text-xs uppercase tracking-wider text-neutral-400 font-medium">
-                                    Collaboration
+                                    Direction
                                 </CardTitle>
                             </CardHeader>
                         </motion.div>
@@ -165,7 +166,7 @@ export default function Process() {
                         >
                             <CardDescription>
                                 <Subheading className="text-[16px] text-neutral-500 leading-relaxed mb-8">
-                                    Real-time updates via dedicated Slack channel. No middlemen.
+                                Clear decisions, shared context and real-time communication throughout.
                                 </Subheading>
                             </CardDescription>
                         </motion.div>
@@ -242,7 +243,7 @@ export default function Process() {
                                     3
                                 </span>
                                 <CardTitle className="text-xs uppercase tracking-wider text-neutral-400 font-medium">
-                                    Delivery
+                                    Execution
                                 </CardTitle>
                             </CardHeader>
                         </motion.div>
@@ -256,7 +257,7 @@ export default function Process() {
                         >
                             <CardDescription>
                                 <Subheading className="text-[16px] text-neutral-500 leading-relaxed mb-8">
-                                    Design, build, and deploy. Most projects go live in under 72 hours.
+                                Design, build and deployment. Most projects ship within 72 hours.
                                 </Subheading>
                             </CardDescription>
                         </motion.div>

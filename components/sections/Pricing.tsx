@@ -11,11 +11,12 @@ import {
 } from "../ui/Card";
 import Subheading from "../ui/Subheading";
 import Section from "../ui/Section";
+import { neueHaasDisplay } from "@/app/fonts";
 
 export default function Pricing() {
   return (
     <Section
-      className="relative min-h-screen max-w-full px-8 flex flex-col items-center text-center z-10"
+      className="relative min-h-screen max-w-full px-8 flex flex-col items-center text-center z-10 scroll-mt-20"
       id="pricing"
     >
       {/* Linear Grid Background */}
@@ -45,17 +46,18 @@ export default function Pricing() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
         >
           <Subheading
-            className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 font-medium"
+            className="uppercase tracking-[0.2em] mb-1"
             align="left"
           >
             Pricing
           </Subheading>
 
-          <Subheading align="left" size="md" className="my-2">
-            Simple pricing, no surprises.
+          <Subheading className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`} align="center"
+          >
+            Clear terms. No recurring fees.
           </Subheading>
 
-          <Subheading
+          {/* <Subheading
             className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!"
             align="center"
           >
@@ -63,7 +65,7 @@ export default function Pricing() {
             <br />
             You own everything.
             <br /> No recurring fees.
-          </Subheading>
+          </Subheading> */}
         </motion.div>
 
         {/* Cards row */}

@@ -12,6 +12,7 @@ import {
   CardDescription,
 } from "@/components/ui/Card";
 import Subheading from "@/components/ui/Subheading";
+import { neueHaasDisplay } from "@/app/fonts";
 
 const slides = [
   <Card key="1" className="h-full flex flex-col overflow-hidden hover:shadow-md">
@@ -174,6 +175,7 @@ export default function Projects() {
 
   return (
     <motion.section
+
       className="w-full py-20 bg-neutral-100 -mx-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -188,7 +190,9 @@ export default function Projects() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
       >
-        <div className="flex flex-wrap items-center px-8 md:px-35 w-full justify-between gap-3">
+        <div
+          id="previous-work"
+          className="flex flex-wrap items-center px-8 md:px-35 w-full justify-between gap-3 scroll-mt-20">
           {/* Title block */}
           <motion.div
             className="flex flex-col mb-2 md:mb-10"
@@ -204,10 +208,9 @@ export default function Projects() {
               Selected work
             </Subheading>
             <Subheading
-              className="mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!"
-              align="left"
+              className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`} align="left"
             >
-              A few recent projects <br /> shipped for clients
+              Recent projects
             </Subheading>
           </motion.div>
 
@@ -241,7 +244,7 @@ export default function Projects() {
 
       {/* Carousel wrapper */}
       <motion.div
-        className="mt-4 -mx-8"
+        className="mt-4 "
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}

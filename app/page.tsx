@@ -9,14 +9,13 @@ import Faqs from "@/components/sections/FAQs";
 import Projects from "@/components/sections/Projects";
 import Testimonial from "@/components/sections/Testimonial";
 import BookACall from "@/components/sections/BookACall";
-import { dd } from "motion/react-client";
 
 export default function Home() {
       return (
             <div className="relative bg-neutral-50 text-neutral-950 overflow-hidden">
-                  <BackgroundWaves />
+                  {/* <BackgroundWaves /> */}
                   <Header />
-                  <main className="flex flex-col items-center justify-center relative z-10 px-8  ">
+                  <main className="flex flex-col items-center justify-center relative z-10  ">
                         <Hero />
                         <Process />
                         <Testimonial />

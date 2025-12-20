@@ -9,9 +9,9 @@ export default function BookACall() {
 
     return (
 
-        <Section 
-        id="calendar"
-        className="max-w-full px-8 flex flex-col items-center" >
+        <Section
+            id="calendar"
+            className="max-w-full px-8 flex flex-col items-center" >
             <motion.div
                 className="flex flex-col mb-10 w-full justify-center items-center"
                 initial={{ opacity: 0, y: 16 }}
@@ -33,7 +33,7 @@ export default function BookACall() {
                 <Subheading
                     className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`} align="center"
                 >
-                Lets work together
+                    Lets work together
                 </Subheading>
             </motion.div>
             <div className="w-full">

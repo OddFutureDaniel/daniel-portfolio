@@ -75,14 +75,14 @@ export default function Header() {
                         Work
                     </a>
                     <a
-                        onClick={() => scrollToId("pricing", 55, { duration: 1 })}
+                        onClick={() => scrollToId("pricing", 20, { duration: 1 })}
                         className="px-4 py-2 text-sm font-medium text-black transition-colors rounded-full hover:bg-neutral-100/80"
                         href="/#pricing"
                     >
                         Pricing
                     </a>
                     <a
-                        onClick={() => scrollToId("calendar", 50, { duration: 1 })}
+                        onClick={() => scrollToId("calendar",-20, { duration: 1 })}
                         className="ml-2 inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-neutral-800 hover:shadow-lg"
                         href="/#book-a-call"
                     >
@@ -120,7 +120,7 @@ export default function Header() {
                         <nav className="p-3 space-y-1">
                             <a
                                 onClick={() => {
-                                    scrollToId("previous-work", 100, { duration: 1 });
+                                    scrollToId("previous-work", 110, { duration: 1 });
                                     closeMenu();
                                 }}
                                 className="block px-4 py-3 rounded-xl text-sm font-medium text-black hover:bg-neutral-100/80 transition-colors"
@@ -143,7 +143,7 @@ export default function Header() {
                             <div className="pt-2 border-t border-neutral-100">
                                 <a
                                     onClick={() => {
-                                        scrollToId("calendar", 50, { duration: 1 });
+                                        scrollToId("calendar", -20, { duration: 1 });
                                         closeMenu();
                                     }}
                                     className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-black text-sm font-medium text-white transition-colors hover:bg-neutral-800"

@@ -95,3 +95,12 @@ body {
   font-family: neuehass;
   src: url(/my-portfolio/public/fonts/Neue-Haas-Grotesk-Display-Pro-75-Bold.ttf);
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}

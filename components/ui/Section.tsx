@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import type { ReactNode, HTMLAttributes } from "react";
+import type { ReactNode } from "react";
 
 type SectionProps = {
   children: ReactNode;
@@ -19,6 +19,7 @@ export default function Section({
   flush = false,
 }: SectionProps) {
   const prefersReducedMotion = useReducedMotion();
+  const disableAnim = prefersReducedMotion || !animateOnScroll;
 
   const base = `
     w-full
@@ -26,22 +27,14 @@ export default function Section({
     ${className}
   `;
 
-  if (prefersReducedMotion || !animateOnScroll) {
-    return (
-      <section id={id} className={base}>
-        {children}
-      </section>
-    );
-  }
-
   return (
     <motion.section
       id={id}
-      initial={false}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 1, ease: "easeOut" }}
       className={base}
+      initial={disableAnim ? false : { opacity: 0, y: 24 }}
+      whileInView={disableAnim ? undefined : { opacity: 1, y: 0 }}
+      viewport={disableAnim ? undefined : { once: true, amount: 0.1 }}
+      transition={disableAnim ? undefined : { duration: 1, ease: "easeOut" }}
     >
       {children}
     </motion.section>

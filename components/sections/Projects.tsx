@@ -2,21 +2,20 @@
 
 import { useRef } from "react";
 import { motion } from "motion/react";
-import Carousel, { CarouselHandle } from "@/components/ui/Carousel";
 import Image from "next/image";
 import {
   Card,
   CardHeader,
-  CardTitle,
   CardContent,
   CardDescription,
 } from "@/components/ui/Card";
 import Subheading from "@/components/ui/Subheading";
 import { neueHaasDisplay } from "@/app/fonts";
+import Button from "../ui/Button";
 
 const slides = [
   <Card key="1" className="h-full flex flex-col overflow-hidden hover:shadow-md">
-    <div className="relative flex-3 w-full bg-neutral-200">
+    <div className="relative h-56 md:h-64 w-full bg-neutral-200">
       <Image
         src="/projects/Jaffa Saba Shopify Portfolio Site Project.png"
         alt="Jaffa Safa Shopify Portfolio Website Image"
@@ -41,7 +40,7 @@ const slides = [
     </CardContent>
   </Card>,
   <Card key="2" className="h-full flex flex-col overflow-hidden hover:shadow-md">
-    <div className="relative flex-3 w-full bg-neutral-200">
+    <div className="relative h-56 md:h-64 w-full bg-neutral-200">
       <Image
         src="/projects/ESTIE SHopify E-commerce Website.png"
         alt="Estie Shopify E-commerce Website"
@@ -66,7 +65,7 @@ const slides = [
     </CardContent>
   </Card>,
   <Card key="3" className="h-full flex flex-col overflow-hidden hover:shadow-md">
-    <div className="relative flex-3 w-full bg-neutral-200">
+    <div className="relative h-56 md:h-64 w-full bg-neutral-200">
       <Image
         src="/projects/730carlina Shopify E-commerce Website.png"
         alt="730Carlina Shopify E-commerce Website"
@@ -91,7 +90,7 @@ const slides = [
     </CardContent>
   </Card>,
   <Card key="4" className="h-full flex flex-col overflow-hidden hover:shadow-md">
-    <div className="relative flex-3 w-full bg-neutral-200">
+    <div className="relative h-56 md:h-64 w-full bg-neutral-200">
       <Image
         src="/projects/glowivdrips clinic Shopify Wesbite.png"
         alt="Glow IV Drips Clinic Shopify Website"
@@ -116,7 +115,7 @@ const slides = [
     </CardContent>
   </Card>,
   <Card key="5" className="h-full flex flex-col overflow-hidden hover:shadow-md">
-    <div className="relative flex-3 w-full bg-neutral-200">
+    <div className="relative h-56 md:h-64 w-full bg-neutral-200">
       <Image
         src="/projects/Skynmaps Clinic Shopify Site.png"
         alt="Skynmaps Clinic Shopify Site"
@@ -141,7 +140,7 @@ const slides = [
     </CardContent>
   </Card>,
   <Card key="6" className="h-full flex flex-col overflow-hidden hover:shadow-md">
-    <div className="relative flex-3 w-full bg-neutral-200">
+    <div className="relative h-56 md:h-64 w-full bg-neutral-200">
       <Image
         src="/projects/TheChiqueEvents Webflow Events Booking Site.png"
         alt="The Chique Events Webflow Booking Site"
@@ -168,14 +167,23 @@ const slides = [
 ];
 
 export default function Projects() {
-  const carouselRef = useRef<CarouselHandle | null>(null);
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
 
-  const handlePrev = () => carouselRef.current?.prev();
-  const handleNext = () => carouselRef.current?.next();
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+
+    // Scroll by ~one card width (keeps behaviour consistent across breakpoints)
+    const firstCard = el.querySelector<HTMLElement>("[data-slide]");
+    const amount = firstCard ? firstCard.offsetWidth + 16 : 420; // +gap fallback
+    el.scrollBy({ left: dir * amount, behavior: "smooth" });
+  };
+
+  const handlePrev = () => scrollByCard(-1);
+  const handleNext = () => scrollByCard(1);
 
   return (
     <motion.section
-
       className="w-full py-20 bg-neutral-100 -mx-8"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -192,7 +200,8 @@ export default function Projects() {
       >
         <div
           id="previous-work"
-          className="flex flex-wrap items-center px-8 md:px-35 w-full justify-between gap-3 scroll-mt-20">
+          className="flex flex-wrap items-center px-8 md:px-35  w-full justify-between gap-3 scroll-mt-20"
+        >
           {/* Title block */}
           <motion.div
             className="flex flex-col mb-2 md:mb-10"
@@ -208,7 +217,8 @@ export default function Projects() {
               Selected work
             </Subheading>
             <Subheading
-              className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`} align="left"
+              className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`}
+              align="left"
             >
               Recent projects
             </Subheading>
@@ -222,39 +232,52 @@ export default function Projects() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.18 }}
           >
-            <button
-              type="button"
+            <Button
+              variant="secondary"
               onClick={handlePrev}
-              className="rounded-full border border-neutral-300 bg-white/80 px-3 py-1 text-xs md:text-sm shadow-sm hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-neutral-400"
               aria-label="Previous slides"
+              className="w-25"
             >
               Prev
-            </button>
-            <button
-              type="button"
+            </Button>
+            <Button
+             variant="secondary"
               onClick={handleNext}
-              className="rounded-full border border-neutral-300 bg-white/80 px-3 py-1 text-xs md:text-sm shadow-sm hover:bg-white focus:outline-none focus-visible:ring focus-visible:ring-neutral-400"
               aria-label="Next slides"
+              className="w-25"
             >
               Next
-            </button>
+            </Button>
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Carousel wrapper */}
+      {/* Scrollable row (fixed array, no infinite loop) */}
       <motion.div
-        className="mt-4 "
+        className="mt-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
       >
-        <Carousel
-          ref={carouselRef}
-          slides={slides}
-          ariaLabel="Selected client projects"
-        />
+        <div
+          ref={scrollerRef}
+          aria-label="Selected client projects"
+          className="overflow-x-auto overscroll-x-contain no-scrollbar scroll-smooth"
+          
+        >
+          <div className="px-8  flex gap-4 md:gap-6">
+            {slides.map((slide, i) => (
+              <div
+                key={(slide as any).key ?? i}
+                data-slide
+                className="shrink-0 w-[85vw] max-w-[420px]"
+              >
+                {slide}
+              </div>
+            ))}
+          </div>
+        </div>
       </motion.div>
     </motion.section>
   );

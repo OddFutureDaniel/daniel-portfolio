@@ -73,11 +73,11 @@ export default function About() {
               <div className="space-y-4 text-neutral-600 leading-relaxed">
                 <p>
                   THIRD LINE initiates and executes digital work for brands that value clarity, reliability and control.
-                  </p>
-                  <p>
+                </p>
+                <p>
                   The focus is on Shopify and e-commerce, combining design, development and commercial awareness into systems that perform without unnecessary complexity.
-                  </p>
-                  <p>
+                </p>
+                <p>
                   Work is delivered quickly, structured carefully and built to be straightforward to run once live.
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function About() {
                 transition={{ duration: 0.45, ease: "easeOut", delay: 0.1 }}
               >
                 <Subheading className="text-white/60" align="left">
-                 In practice
+                  In practice
                 </Subheading>
               </motion.div>
 
@@ -257,6 +257,15 @@ export default function About() {
                   <span className="text-[#9cdcfe]">deploy</span>
                   <span className="text-white/60">:</span>
                   <span className="text-[#ce9178]">"Vercel"</span>
+                  <span className="text-white/60">,</span>
+
+                </div>
+                <div className="pl-4">
+                  <span className="text-[#9cdcfe]">e-commerce</span>
+                  <span className="text-white/60">:</span>
+                  <span className="text-[#ce9178]">
+                    {`"Shopify"`}
+                  </span>
                 </div>
 
                 <div className="mt-3 flex items-center gap-1">

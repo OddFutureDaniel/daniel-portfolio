@@ -16,7 +16,7 @@ export default function Process() {
     return (
         <Section
             id="process"
-            className="relative min-h-screen max-w-full px-8 flex flex-col items-center text-center z-10"
+            className="relative min-h-screen bg-neutral-50 max-w-full px-8 flex flex-col items-center text-center z-10"
         >
 
             <motion.div
@@ -166,7 +166,7 @@ export default function Process() {
                         >
                             <CardDescription>
                                 <Subheading className="text-[16px] text-neutral-500 leading-relaxed mb-8">
-                                Clear decisions, shared context and real-time communication throughout.
+                                    Clear decisions, shared context and real-time communication throughout.
                                 </Subheading>
                             </CardDescription>
                         </motion.div>
@@ -257,7 +257,7 @@ export default function Process() {
                         >
                             <CardDescription>
                                 <Subheading className="text-[16px] text-neutral-500 leading-relaxed mb-8">
-                                Design, build and deployment. Most projects ship within 72 hours.
+                                    Design, build and deployment. Most projects ship within 72 hours.
                                 </Subheading>
                             </CardDescription>
                         </motion.div>

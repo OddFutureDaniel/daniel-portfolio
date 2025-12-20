@@ -31,16 +31,7 @@ export default function Home() {
 }
 
 {/* TODO
-       
-      - LOGO
-      - fix header links
-      - fix mobile header links
-      - connect hero cta buttons
-      - restyle PROJECTS nav buttons
-      - make PROJECTS carousel scrollable on desktop, probs have to give up infinite scroll
-      - edit PRICING features
-      - make middle PRICING feature colour inverted for most popular
-      - link pricing CTA buttons to calendar
+      
       - PROJECTS descriptions and tags
       - PRICING cards font sizes and colours
       - fill box 3 in ABOUT US

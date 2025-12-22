@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Subheading from "../ui/Subheading";
 import Section from "../ui/Section";
 import AnimatedNumber from "@/components/ui/AnimatedNumber";
+import { neueHaasDisplay } from "@/app/fonts";
 
 export default function About() {
   return (
@@ -27,20 +28,21 @@ export default function About() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
         >
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
+          <div className=" bg-neutral-50 max-w-full px-8 flex flex-col items-center text-center z-10">
+            
               <Subheading
-                className="uppercase tracking-[0.2em] mb-2"
+                className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 font-medium"
                 align="left"
               >
                 Position
               </Subheading>
-              <Subheading size="lg" align="left">
-                Built with intent. Made to last.
+              <Subheading
+                className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`}
+                align="left"
+              >
+                Built with intent. Made to last
               </Subheading>
             </div>
-            <p>We design what we build, and we build what ships.</p>
-          </div>
         </motion.div>
 
         {/* Grid wrapper */}
@@ -192,20 +194,26 @@ export default function About() {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  {/* img */}
-                    <div>
-                      <div className="font-medium">
-                        Daniel
-                      </div>
-                      <div className="text-sm text-neutral-500">
-                        Lead Developer
-                      </div>
+                  <div className="h-12 w-12 rounded-full bg-neutral-100 flex items-center justify-center">
+                    <span className="text-sm font-medium text-neutral-500">D
+                    </span>
+                  </div>
+                  <div className="text-left">
+                    <div className="font-medium">
+                      Daniel
                     </div>
-                    <div className="ml-auto h-2 w-2 rounded-full bg-emerald-500">
+                    <div className="text-sm text-neutral-500">
+                      Lead Developer
                     </div>
+                  </div>
+                  <div className="ml-auto h-2 w-2 rounded-full bg-emerald-500">
+                  </div>
                 </div>
               </div>
-              <p className="m-4 mt-8">Open to collaborations with designers, founders, and people with strong ideas.</p>
+              <div className="h-auto w-auto rounded-2xl mt-10 p-1 bg-neutral-100">
+                <p className="m-2 text-neutral-600">Open to collaborations with designers, founders, and people with strong ideas.</p>
+
+              </div>
             </div>
           </motion.div>
 

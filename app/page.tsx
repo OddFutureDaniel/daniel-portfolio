@@ -32,10 +32,9 @@ export default function Home() {
 
 {/* TODO
 
-      - fill box 3 in ABOUT US
       - Do more FAQS
       - Finalise transitions especially for CTA's 
-      - FOOTER links
+      - privacy policy
 
       THEN DEPLOY
       

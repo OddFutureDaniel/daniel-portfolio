@@ -29,12 +29,14 @@ const slides = [
         align="left"
         className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
       >
-        Shopify · E-commerce · GA4
+        Shopify · E-commerce · Portfolio
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className="text-base md:text-lg font-medium">Jaffa Saba</h3>
-        <CardDescription className="mt-1 text-sm text-neutral-600">
-          A Shopify e-commerce & portfolio site for multidisciplinary artist Jaffa Saba
+
+        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}
+        >Jaffa Saba</h3>
+        <CardDescription className="mt-1 text-[15px] text-neutral-600">
+          A Shopify e-commerce & portfolio site for multidisciplinary artist Jaffa Saba.
         </CardDescription>
       </CardHeader>
     </CardContent>
@@ -54,12 +56,14 @@ const slides = [
         align="left"
         className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
       >
-        Shopify · E-commerce · GA4
+        Shopify · E-commerce · Large-Scale
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className="text-base md:text-lg font-medium">Glow IV Drips</h3>
-        <CardDescription className="mt-1 text-sm text-neutral-600">
-          Custom booking-integrated Shopify build for a London IV clinic.
+        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+          ESTIEE
+          </h3>
+        <CardDescription className="mt-1 text-[15px] text-neutral-600">
+          Custom storefront for a luxury beauty and wellness brand.
         </CardDescription>
       </CardHeader>
     </CardContent>
@@ -79,12 +83,14 @@ const slides = [
         align="left"
         className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
       >
-        Shopify · E-commerce · GA4
+        Brand · porfolio · creative
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className="text-base md:text-lg font-medium">Glow IV Drips</h3>
-        <CardDescription className="mt-1 text-sm text-neutral-600">
-          Custom booking-integrated Shopify build for a London IV clinic.
+        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+          730Carlina
+          </h3>
+        <CardDescription className="mt-1 text-[15px] text-neutral-600">
+          Custom e-commerce site for a contemporary fashion brand.
         </CardDescription>
       </CardHeader>
     </CardContent>
@@ -107,8 +113,10 @@ const slides = [
         Shopify · E-commerce · GA4
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className="text-base md:text-lg font-medium">Glow IV Drips</h3>
-        <CardDescription className="mt-1 text-sm text-neutral-600">
+        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+          Glow IV Drips
+          </h3>
+        <CardDescription className="mt-1 text-[15px] text-neutral-600">
           Custom booking-integrated Shopify build for a London IV clinic.
         </CardDescription>
       </CardHeader>
@@ -129,12 +137,14 @@ const slides = [
         align="left"
         className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
       >
-        Shopify · E-commerce · GA4
+        clinic · E-commerce · wellness
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className="text-base md:text-lg font-medium">Glow IV Drips</h3>
-        <CardDescription className="mt-1 text-sm text-neutral-600">
-          Custom booking-integrated Shopify build for a London IV clinic.
+        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+          SkynMaps
+          </h3>
+        <CardDescription className="mt-1 text-[15px] text-neutral-600">
+          E-commerce website for a premium skin clinic brand.
         </CardDescription>
       </CardHeader>
     </CardContent>
@@ -154,12 +164,14 @@ const slides = [
         align="left"
         className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
       >
-        Shopify · E-commerce · GA4
+        booking · events · luxury
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className="text-base md:text-lg font-medium">Glow IV Drips</h3>
-        <CardDescription className="mt-1 text-sm text-neutral-600">
-          Custom booking-integrated Shopify build for a London IV clinic.
+        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+          The Chique Events
+          </h3>
+        <CardDescription className="mt-1 text-[15px] text-neutral-600">
+          Event booking website for a luxury events brand.
         </CardDescription>
       </CardHeader>
     </CardContent>
@@ -241,7 +253,7 @@ export default function Projects() {
               Prev
             </Button>
             <Button
-             variant="secondary"
+              variant="secondary"
               onClick={handleNext}
               aria-label="Next slides"
               className="w-25"
@@ -264,7 +276,7 @@ export default function Projects() {
           ref={scrollerRef}
           aria-label="Selected client projects"
           className="overflow-x-auto overscroll-x-contain no-scrollbar scroll-smooth"
-          
+
         >
           <div className="px-8  flex gap-4 md:gap-6">
             {slides.map((slide, i) => (

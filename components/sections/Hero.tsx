@@ -9,9 +9,22 @@ export default function Hero() {
   return (
     <Section
       id="hero"
-      className="relative min-h-screen bg-[#121212] px-6 py-65 flex flex-col items-center text-center z-10 overflow-hidden"
+      className="relative min-h-screen bg-[#121212] px-6 py-35 flex flex-col items-center text-center z-10 overflow-hidden"
     >
       {/* Content */}
+      <div className="opacity: 1; mb-16 will-change: transform, opacity; transform: none;">
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-black/8 bg-white/80 backdrop-blur-sm px-4 py-2 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75">
+            </span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500">
+            </span>
+          </span>
+          <span className="text-[13px] font-medium text-neutral-600">
+            Available for Q1 2026
+          </span>
+        </div>
+      </div>
       <h1
         className={`${neueHaasDisplay.className} text-[#F5F5F5] text-5xl md:text-8xl tracking-tight`}
       >

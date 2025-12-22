@@ -180,14 +180,32 @@ export default function About() {
 
           {/* ================= SMALL WHITE CARD (placeholder) ================= */}
           <motion.div
-            className="md:col-span-5"
+            className="md:col-span-5 "
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55, ease: "easeOut", delay: 0.16 }}
           >
-            <div className="bg-white rounded-2xl p-8 border border-neutral-200 h-full">
-              3
+            <div className="md:col-span-5 bg-white rounded-2xl p-8 border border-neutral-200 opacity: 1; will-change: transform, opacity; transform: none;">
+              <h3 className="text-lg font-semibold mb-6">
+                The team
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  {/* img */}
+                    <div>
+                      <div className="font-medium">
+                        Daniel
+                      </div>
+                      <div className="text-sm text-neutral-500">
+                        Lead Developer
+                      </div>
+                    </div>
+                    <div className="ml-auto h-2 w-2 rounded-full bg-emerald-500">
+                    </div>
+                </div>
+              </div>
+              <p className="m-4 mt-8">Open to collaborations with designers, founders, and people with strong ideas.</p>
             </div>
           </motion.div>
 

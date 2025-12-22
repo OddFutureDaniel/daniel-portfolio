@@ -31,9 +31,7 @@ export default function Home() {
 }
 
 {/* TODO
-      
-      - PROJECTS descriptions and tags
-      - PRICING cards font sizes and colours
+
       - fill box 3 in ABOUT US
       - Do more FAQS
       - Finalise transitions especially for CTA's 

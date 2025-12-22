@@ -19,26 +19,13 @@ export default function Footer() {
                     </div>
                     <div className="md:col-span-7">
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
-                            <div>
-                                <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">Services
-                                </h3>
-                                <ul className="space-y-3">
-                                    <li>
-                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#our-services">Web Development
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#our-services">UI/UX Design
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            
                             <div>
                                 <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-4">Company
                                 </h3>
                                 <ul className="space-y-3">
                                     <li>
-                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#about-us">About
+                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#about">About
                                         </a>
                                     </li>
                                     <li>
@@ -46,7 +33,7 @@ export default function Footer() {
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#book-a-call">Contact
+                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#calendar">Contact
                                         </a>
                                     </li>
                                 </ul>

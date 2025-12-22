@@ -26,10 +26,6 @@ export default function BookACall() {
                     Contact Us
                 </Subheading>
 
-                <Subheading align="left" size="md" className="my-2">
-                    Pick a time that works for you
-                </Subheading>
-
                 <Subheading
                     className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`} align="center"
                 >

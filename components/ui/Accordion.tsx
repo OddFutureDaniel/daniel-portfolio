@@ -93,7 +93,7 @@ export function Accordion({
 
 export function AccordionItem({ children }: AccordionItemProps) {
   return (
-    <div className=" md:w-150 w-100 mb-4 overflow-hidden rounded-xl border border-neutral-200 bg-white/80 shadow-sm backdrop-blur-sm">
+    <div className=" md:w-150 w-auto mb-4 overflow-hidden rounded-xl border border-neutral-200 bg-white/80 shadow-sm backdrop-blur-sm">
       {children}
     </div>
   );

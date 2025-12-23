@@ -210,8 +210,8 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              <div className="h-auto w-auto rounded-2xl mt-10 p-1 bg-neutral-100">
-                <p className="m-2 text-neutral-600">Open to collaborations with designers, founders, and people with strong ideas.</p>
+              <div className="h-auto w-auto rounded-2xl mt-8 p-1 bg-neutral-950">
+                <p className="m-2 p-1 text-neutral-50">Open to collaborations with designers, founders, and people with strong ideas.</p>
 
               </div>
             </div>

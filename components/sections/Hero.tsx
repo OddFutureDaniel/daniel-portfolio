@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "../ui/Button";
+import Button from "@/components/ui/Button";
 import { scrollToId } from "../ui/ScrollToID";
 import Section from "../ui/Section";
 import { neueHaasDisplay } from "@/app/fonts";

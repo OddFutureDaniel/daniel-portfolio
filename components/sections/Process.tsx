@@ -16,7 +16,7 @@ export default function Process() {
     return (
         <Section
             id="process"
-            className="relative min-h-screen bg-neutral-50 max-w-full px-8 pt-0! flex flex-col items-center text-center z-10"
+            className="relative min-h-screen bg-neutral-50 max-w-full px-8 pt-2! flex flex-col items-center text-center z-10"
         >
 
             <motion.div

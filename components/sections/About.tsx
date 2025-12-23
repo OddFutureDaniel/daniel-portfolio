@@ -276,13 +276,13 @@ export default function About() {
                 <div className="pl-4">
                   <span className="text-[#9cdcfe]">design</span>
                   <span className="text-white/60">:</span>
-                  <span className="text-[#ce9178]">"Figma"</span>
+                  <span className="text-[#ce9178]">&quot;Figma&quot;</span>
                   <span className="text-white/60">,</span>
                 </div>
                 <div className="pl-4">
                   <span className="text-[#9cdcfe]">deploy</span>
                   <span className="text-white/60">:</span>
-                  <span className="text-[#ce9178]">"Vercel"</span>
+                  <span className="text-[#ce9178]">&quot;Vercel&quot;</span>
                   <span className="text-white/60">,</span>
 
                 </div>

@@ -109,7 +109,7 @@ export default function Faqs() {
                 </AccordionHeader>
                 <AccordionPanel>
                   Most Shopify sites are built and ready to launch within 72 hours once 
-                  we’re aligned on scope and content. More complex or design-led projects 
+                  we&apos;re aligned on scope and content. More complex or design-led projects 
                   may take longer, with timelines agreed upfront.
                 </AccordionPanel>
               </AccordionItem>
@@ -146,7 +146,7 @@ export default function Faqs() {
                 <AccordionPanel>
                 Yes. Every build is set up so you can update content, 
                 products and pages without touching code. 
-                You’ll get a clear handover so you’re in control from day one.
+                You&apos;ll get a clear handover so you&apos;re in control from day one.
                 </AccordionPanel>
               </AccordionItem>
             </motion.div>
@@ -163,7 +163,7 @@ export default function Faqs() {
                 </AccordionHeader>
                 <AccordionPanel>
                 Yes. we'll deploy your site and help set up hosting, 
-                whether that’s Shopify, Vercel or another provider. 
+                whether that&apos;s Shopify, Vercel or another provider. 
                 Everything is configured for performance, security and reliability.
                 </AccordionPanel>
               </AccordionItem>

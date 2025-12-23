@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/Card";
 import Subheading from "@/components/ui/Subheading";
 import { neueHaasDisplay } from "@/app/fonts";
-import Button from "../ui/Button";
+import Button from "@/components/ui/Button";
 
 const slides = [
   <Card key="1" className="h-full flex flex-col overflow-hidden hover:shadow-md">

@@ -13,7 +13,7 @@ import Subheading from "@/components/ui/Subheading";
 import { neueHaasDisplay } from "@/app/fonts";
 import Button from "@/components/ui/Button";
 
-const slides = [
+const slides: React.ReactElement[] = [
   <Card key="1" className="h-full flex flex-col overflow-hidden hover:shadow-md">
     <div className="relative h-56 md:h-64 w-full bg-neutral-200">
       <Image
@@ -27,16 +27,19 @@ const slides = [
     <CardContent className="flex-2 flex flex-col gap-3 p-4 md:p-5">
       <Subheading
         align="left"
-        className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
+        className="text-[11px] mt-1 uppercase tracking-[0.18em] text-neutral-500"
       >
         Shopify · E-commerce · Portfolio
       </Subheading>
       <CardHeader className="p-0">
-
-        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}
-        >Jaffa Saba</h3>
+        <h3
+          className={`${neueHaasDisplay.className} text-base md:text-lg font-medium text-black!`}
+        >
+          Jaffa Saba
+        </h3>
         <CardDescription className="mt-1 text-[15px] text-neutral-600">
-          A Shopify e-commerce & portfolio site for multidisciplinary artist Jaffa Saba.
+          A Shopify e-commerce & portfolio site for multidisciplinary artist Jaffa
+          Saba.
         </CardDescription>
       </CardHeader>
     </CardContent>
@@ -54,14 +57,16 @@ const slides = [
     <CardContent className="flex-2 flex flex-col gap-3 p-4 md:p-5">
       <Subheading
         align="left"
-        className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
+        className="text-[11px] mt-1 uppercase tracking-[0.18em] text-neutral-500"
       >
         Shopify · E-commerce · Large-Scale
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+        <h3
+          className={`${neueHaasDisplay.className} text-base md:text-lg font-medium text-black!`}
+        >
           ESTIEE
-          </h3>
+        </h3>
         <CardDescription className="mt-1 text-[15px] text-neutral-600">
           Custom storefront for a luxury beauty and wellness brand.
         </CardDescription>
@@ -81,14 +86,16 @@ const slides = [
     <CardContent className="flex-2 flex flex-col gap-3 p-4 md:p-5">
       <Subheading
         align="left"
-        className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
+        className="text-[11px] mt-1 uppercase tracking-[0.18em] text-neutral-500"
       >
         Brand · porfolio · creative
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+        <h3
+          className={`${neueHaasDisplay.className} text-base md:text-lg font-medium text-black!`}
+        >
           730Carlina
-          </h3>
+        </h3>
         <CardDescription className="mt-1 text-[15px] text-neutral-600">
           Custom e-commerce site for a contemporary fashion brand.
         </CardDescription>
@@ -108,14 +115,16 @@ const slides = [
     <CardContent className="flex-2 flex flex-col gap-3 p-4 md:p-5">
       <Subheading
         align="left"
-        className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
+        className="text-[11px] mt-1 uppercase tracking-[0.18em] text-neutral-500"
       >
         Shopify · E-commerce · GA4
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+        <h3
+          className={`${neueHaasDisplay.className} text-base md:text-lg font-medium text-black!`}
+        >
           Glow IV Drips
-          </h3>
+        </h3>
         <CardDescription className="mt-1 text-[15px] text-neutral-600">
           Custom booking-integrated Shopify build for a London IV clinic.
         </CardDescription>
@@ -135,14 +144,16 @@ const slides = [
     <CardContent className="flex-2 flex flex-col gap-3 p-4 md:p-5">
       <Subheading
         align="left"
-        className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
+        className="text-[11px] mt-1 uppercase tracking-[0.18em] text-neutral-500"
       >
         clinic · E-commerce · wellness
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+        <h3
+          className={`${neueHaasDisplay.className} text-base md:text-lg font-medium text-black!`}
+        >
           SkynMaps
-          </h3>
+        </h3>
         <CardDescription className="mt-1 text-[15px] text-neutral-600">
           E-commerce website for a premium skin clinic brand.
         </CardDescription>
@@ -162,14 +173,16 @@ const slides = [
     <CardContent className="flex-2 flex flex-col gap-3 p-4 md:p-5">
       <Subheading
         align="left"
-        className="text-[11px] uppercase tracking-[0.18em] text-neutral-500"
+        className="text-[11px] mt-1 uppercase tracking-[0.18em] text-neutral-500"
       >
         booking · events · luxury
       </Subheading>
       <CardHeader className="p-0">
-        <h3 className={`${neueHaasDisplay.className}  text-base md:text-lg font-medium  text-black!`}>
+        <h3
+          className={`${neueHaasDisplay.className} text-base md:text-lg font-medium text-black!`}
+        >
           The Chique Events
-          </h3>
+        </h3>
         <CardDescription className="mt-1 text-[15px] text-neutral-600">
           Event booking website for a luxury events brand.
         </CardDescription>
@@ -212,7 +225,7 @@ export default function Projects() {
       >
         <div
           id="previous-work"
-          className="flex flex-wrap items-center px-8 md:px-35  w-full justify-between gap-3 scroll-mt-20"
+          className="flex flex-wrap items-center px-8 md:px-35 w-full justify-between gap-3 scroll-mt-20"
         >
           {/* Title block */}
           <motion.div
@@ -276,12 +289,11 @@ export default function Projects() {
           ref={scrollerRef}
           aria-label="Selected client projects"
           className="overflow-x-auto overscroll-x-contain no-scrollbar scroll-smooth"
-
         >
-          <div className="px-8  flex gap-4 md:gap-6">
+          <div className="px-8 flex gap-4 md:gap-6">
             {slides.map((slide, i) => (
               <div
-                key={(slide as any).key ?? i}
+                key={slide.key ?? i}
                 data-slide
                 className="shrink-0 w-[85vw] max-w-[420px]"
               >

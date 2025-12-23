@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -5,8 +6,8 @@ export default function Footer() {
             <div className="mx-auto max-w-6xl px-6 py-16 md:py-20" role="navigation" aria-label="Footer" >
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
                     <div className="md:col-span-5">
-                        <a className="inline-block" href="/"></a>
-                        <p className="mt-4 text-sm text-neutral-500 max-w-xs leading-relaxed">Your site, live in 72 hours. Don't wait for greatness.
+                        <Link className="inline-block" href="/"> </Link>
+                        <p className="mt-4 text-sm text-neutral-500 max-w-xs leading-relaxed">Designed with intent. Live in 72 hours.
                         </p>
                         <div className="mt-6 flex items-center gap-4">
                             <a href="https://www.linkedin.com/in/Daniel-rogerson" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-9 w-9 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 hover:text-neutral-700 transition-colors" aria-label="LinkedIn">
@@ -25,16 +26,15 @@ export default function Footer() {
                                 </h3>
                                 <ul className="space-y-3">
                                     <li>
-                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#about">About
-                                        </a>
+                                    <Link className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#about">About</Link>
                                     </li>
                                     <li>
-                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#previous-work">Work
-                                        </a>
+                                    <Link className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#previous-work">Work</Link>
+
                                     </li>
                                     <li>
-                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#calendar">Contact
-                                        </a>
+                                    <Link className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#calendar">Conract</Link>
+
                                     </li>
                                 </ul>
                             </div>
@@ -43,8 +43,8 @@ export default function Footer() {
                                 </h3>
                                 <ul className="space-y-3">
                                     <li>
-                                        <a className="text-sm text-neutral-600 hover:text-black transition-colors" href="">Privacy Policy
-                                        </a>
+                                    <Link className="text-sm text-neutral-600 hover:text-black transition-colors" href="">Privacy Policy</Link>
+
                                     </li>
                                 </ul>
                             </div>

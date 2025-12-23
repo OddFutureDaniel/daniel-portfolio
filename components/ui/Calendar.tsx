@@ -25,7 +25,7 @@ export default function Calendar() {
             namespace="30min"
             calLink="thirdline/30min"
             // booking page is on app.cal.eu
-            calOrigin="https://app.cal.eu"
+            calOrigin="https://app.cal.com"
             style={{ width: "100%", height: "500px", overflow: "scroll" }}
             config={{ layout: "month_view", theme: "dark" }}
         />

@@ -1,9 +1,9 @@
-
+import React from "react";
 
 type CardProps = {
   children: React.ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
   size?: "sm" | "md" | "lg";
   // Note: `align` isn't used on the Card itself, only on CardTitle
   align?: "left" | "center" | "right";

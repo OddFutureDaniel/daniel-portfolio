@@ -11,19 +11,19 @@ type BaseProps = {
   size?: ButtonSize;
   className?: string;
   loading?: boolean;
-  disabled?: boolean; // ✅ add this
+  disabled?: boolean;
 };
 
-// If href is provided we treat it as a link
-type LinkButtonProps = BaseProps & {
-  href: string;
-  type?: never;
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+type LinkButtonProps = BaseProps &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
+    href: string;
+    type?: never;
+  };
 
-// Otherwise it is a normal button
-type RegularButtonProps = BaseProps & {
-  href?: undefined;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+type RegularButtonProps = BaseProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: undefined;
+  };
 
 type ButtonProps = LinkButtonProps | RegularButtonProps;
 
@@ -58,11 +58,13 @@ export default function Button(props: ButtonProps) {
     variant = "primary",
     size = "md",
     className = "",
-    loading,
+    loading = false,
     href,
-    disabled,
+    disabled = false,
     ...rest
   } = props;
+
+  const isDisabled = disabled || loading;
 
   const baseClasses =
     "inline-flex items-center justify-center rounded-full font-medium shadow-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black";
@@ -71,7 +73,7 @@ export default function Button(props: ButtonProps) {
     baseClasses,
     getVariantClasses(variant),
     getSizeClasses(size),
-    disabled || loading ? "opacity-60 cursor-not-allowed" : "",
+    isDisabled ? "opacity-60 cursor-not-allowed pointer-events-none" : "",
     className,
   ]
     .filter(Boolean)
@@ -80,15 +82,34 @@ export default function Button(props: ButtonProps) {
   const content = (
     <>
       {loading && (
-        <span className="mr-2 h-3 w-3 animate-spin rounded-full border border-white border-t-transparent" />
+        <span
+          aria-hidden="true"
+          className="mr-2 h-3 w-3 animate-spin rounded-full border border-current border-t-transparent"
+        />
       )}
       <span>{children}</span>
+      {loading && <span className="sr-only">Loading</span>}
     </>
   );
 
   if (href) {
+    const isDisabled = !!(disabled || loading);
+  
+    const { onClick, tabIndex, ...linkRest } =
+      rest as Omit<LinkButtonProps, "href">;
+  
     return (
-      <Link href={href} className={allClasses} aria-disabled={disabled || loading}>
+      <Link
+        {...linkRest}
+        href={href}
+        className={allClasses}
+        aria-disabled={isDisabled}
+        tabIndex={isDisabled ? -1 : tabIndex}
+        onClick={(e) => {
+          if (isDisabled) e.preventDefault();
+          onClick?.(e);
+        }}
+      >
         {content}
       </Link>
     );
@@ -97,7 +118,9 @@ export default function Button(props: ButtonProps) {
   return (
     <button
       className={allClasses}
-      disabled={disabled || loading}
+      disabled={isDisabled}
+      aria-disabled={isDisabled}
+      type={(rest as RegularButtonProps).type ?? "button"}
       {...(rest as RegularButtonProps)}
     >
       {content}

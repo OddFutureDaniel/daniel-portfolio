@@ -14,7 +14,7 @@ export default function Home() {
             <div className="relative bg-neutral-50 text-neutral-950 overflow-hidden">
                   {/* <BackgroundWaves /> */}
                   <Header />
-                  <main className="flex flex-col items-center justify-center relative z-10  ">
+                  <div className="flex flex-col items-center justify-center relative z-10  ">
                         <Hero />
                         <Process />
                         <Testimonial />
@@ -23,24 +23,8 @@ export default function Home() {
                         <About />
                         <BookACall />
                         <Faqs />
-                  </main>
+                  </div>
                   <Footer />
             </div>
       );
 }
-
-{/* TODO
-
-      - Finalise transitions especially for CTA's 
-      - privacy policy
-
-      THEN DEPLOY
-      
-      FINAL TODO:
-
-      - go over all elements and do a11y
-      - SEO best practices
-      - 
-
-      
-      */}

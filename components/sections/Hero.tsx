@@ -12,11 +12,10 @@ export default function Hero() {
       className="relative min-h-screen bg-[#121212] px-6 py-35 flex flex-col items-center text-center z-10 overflow-hidden"
     >
       {/* Content */}
-      <div className="opacity: 1; mb-16 will-change: transform, opacity; transform: none;">
+      <div className="mb-16 opacity-100 will-change-transform">
         <div className="inline-flex items-center gap-2.5 rounded-full border border-black/8 bg-white/80 backdrop-blur-sm px-4 py-2 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75">
-            </span>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:animate-none" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500">
             </span>
           </span>
@@ -50,7 +49,7 @@ export default function Hero() {
       </div>
 
       <div
-        aria-hidden
+        aria-hidden="true"
         className="pointer-events-none absolute -bottom-6 left-0 right-0 h-24 bg-neutral-50 rounded-t-[4rem]"
       />
     </Section>

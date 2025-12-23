@@ -19,6 +19,7 @@ export default function Pricing() {
     <Section
       className="relative min-h-screen max-w-full px-8 flex flex-col items-center text-center z-10 scroll-mt-20"
       id="pricing"
+      aria-labelledby="pricing-title"
     >
       {/* Linear Grid Background */}
       <div
@@ -53,7 +54,7 @@ export default function Pricing() {
             Pricing
           </Subheading>
 
-          <Subheading className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`} align="center"
+          <Subheading id="pricing-title" className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`} align="center"
           >
             Clear terms. No recurring fees.
           </Subheading>
@@ -111,6 +112,8 @@ export default function Pricing() {
                   <ul className="space-y-3 mb-8 flex-1">
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -127,6 +130,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -143,6 +148,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -159,6 +166,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -175,6 +184,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -201,7 +212,7 @@ export default function Pricing() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, ease: "easeOut", delay: 0.24 }}
               >
-                <Button className="w-full" variant="primary"
+                <Button className="w-full" variant="primary" aria-label="Get started with the Starter plan"
                   onClick={() => scrollToId("calendar", -20, { duration: 1 })}>
                   Get Started
                 </Button>
@@ -252,6 +263,8 @@ export default function Pricing() {
                   <ul className="space-y-3 mb-8 flex-1">
                     <li className="flex items-center  gap-3 text-sm text-neutral-50!">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-emerald-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -268,6 +281,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-50!">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-emerald-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -284,6 +299,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-50!">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-emerald-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -300,6 +317,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-50!">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-emerald-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -316,6 +335,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-50!">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-emerald-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -332,6 +353,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-50!">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-emerald-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -358,7 +381,7 @@ export default function Pricing() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, ease: "easeOut", delay: 0.32 }}
               >
-                <Button className="w-full" variant="secondary"
+                <Button className="w-full" variant="secondary" aria-label="Get started with the Professional plan"
                   onClick={() => scrollToId("calendar", -20, { duration: 1 })}>
                   Get Started
                 </Button>
@@ -400,6 +423,8 @@ export default function Pricing() {
                   <ul className="space-y-3 mb-8 flex-1">
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -416,6 +441,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -432,6 +459,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -448,6 +477,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -464,6 +495,8 @@ export default function Pricing() {
                     </li>
                     <li className="flex items-center gap-3 text-sm text-neutral-600">
                       <svg
+                        aria-hidden="true"
+                        focusable="false"
                         className="h-4 w-4 text-neutral-400"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -490,7 +523,7 @@ export default function Pricing() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, ease: "easeOut", delay: 0.36 }}
               >
-                <Button className="w-full" variant="primary"
+                <Button className="w-full" variant="primary" aria-label="Get started with the Enterprise plan"
                   onClick={() => scrollToId("calendar", -20, { duration: 1 })}>
                   Get Started
                 </Button>

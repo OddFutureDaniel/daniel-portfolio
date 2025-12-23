@@ -23,7 +23,7 @@ export default function Calendar() {
     return (
         <Cal
             namespace="30min"
-            calLink="chivelly/30min"
+            calLink="thirdline/30min"
             // booking page is on app.cal.eu
             calOrigin="https://app.cal.eu"
             style={{ width: "100%", height: "500px", overflow: "scroll" }}

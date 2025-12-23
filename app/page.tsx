@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero";
 import Process from "@/components/sections/Process";
-import BackgroundWaves from "@/components/sections/BackgroundWaves";
 import Pricing from "@/components/sections/Pricing";
 import About from "@/components/sections/About";
 import Footer from "@/components/sections/Footer";
@@ -32,7 +31,6 @@ export default function Home() {
 
 {/* TODO
 
-      - Do more FAQS
       - Finalise transitions especially for CTA's 
       - privacy policy
 

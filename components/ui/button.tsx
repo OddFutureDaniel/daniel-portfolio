@@ -11,6 +11,7 @@ type BaseProps = {
   size?: ButtonSize;
   className?: string;
   loading?: boolean;
+  disabled?: boolean; // ✅ add this
 };
 
 // If href is provided we treat it as a link
@@ -70,7 +71,7 @@ export default function Button(props: ButtonProps) {
     baseClasses,
     getVariantClasses(variant),
     getSizeClasses(size),
-    (disabled || loading) ? "opacity-60 cursor-not-allowed" : "",
+    disabled || loading ? "opacity-60 cursor-not-allowed" : "",
     className,
   ]
     .filter(Boolean)
@@ -85,18 +86,14 @@ export default function Button(props: ButtonProps) {
     </>
   );
 
-  // If href exists render as Next Link + <a>
   if (href) {
     return (
-      <Link href={href} legacyBehavior>
-        <a className={allClasses} aria-disabled={disabled || loading} {...(rest as LinkButtonProps)}>
-          {content}
-        </a>
+      <Link href={href} className={allClasses} aria-disabled={disabled || loading}>
+        {content}
       </Link>
     );
   }
 
-  // Otherwise render as a <button>
   return (
     <button
       className={allClasses}

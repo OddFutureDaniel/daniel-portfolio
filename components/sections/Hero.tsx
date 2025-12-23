@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <Section
       id="hero"
-      className="relative min-h-screen bg-[#121212] px-6 py-35 flex flex-col items-center text-center z-10 overflow-hidden"
+      className="relative min-h-svh bg-[#121212] px-6 py-35 flex flex-col items-center text-center z-10 overflow-hidden"
     >
       {/* Content */}
       <div className="mb-16 opacity-100 will-change-transform">

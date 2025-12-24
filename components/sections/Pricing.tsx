@@ -97,7 +97,7 @@ export default function Pricing() {
                 <CardHeader className="mb-8">
                   <CardTitle align="center">Starter</CardTitle>
                   <CardDescription className="text-neutral-600!">Perfect for landing pages</CardDescription>
-                  <Subheading className={`${neueHaasDisplay.className} font-medium  text-black!`} size="lg">$500</Subheading>
+                  <Subheading className={`${neueHaasDisplay.className} font-medium  text-black!`} size="lg">£500</Subheading>
                 </CardHeader>
               </motion.div>
 
@@ -247,7 +247,7 @@ export default function Pricing() {
                 <CardHeader className="mb-8">
                   <CardTitle className="text-neutral-50!" align="center">Professional</CardTitle>
                   <CardDescription className="text-neutral-50!">Complete website solution</CardDescription>
-                  <Subheading className={`${neueHaasDisplay.className} font-medium  text-neutral-50!`} size="lg">$1250</Subheading>
+                  <Subheading className={`${neueHaasDisplay.className} font-medium  text-neutral-50!`} size="lg">£1250</Subheading>
                 </CardHeader>
               </motion.div>
 

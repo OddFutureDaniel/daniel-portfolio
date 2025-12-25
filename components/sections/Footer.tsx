@@ -33,7 +33,7 @@ export default function Footer() {
 
                                     </li>
                                     <li>
-                                    <Link className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#calendar">Conract</Link>
+                                    <Link className="text-sm text-neutral-600 hover:text-black transition-colors" href="/#calendar">Contact</Link>
 
                                     </li>
                                 </ul>
@@ -43,7 +43,7 @@ export default function Footer() {
                                 </h3>
                                 <ul className="space-y-3">
                                     <li>
-                                    <Link className="text-sm text-neutral-600 hover:text-black transition-colors" href="">Privacy Policy</Link>
+                                    <Link className="text-sm text-neutral-600 hover:text-black transition-colors" href="/privacy">Privacy Policy</Link>
 
                                     </li>
                                 </ul>

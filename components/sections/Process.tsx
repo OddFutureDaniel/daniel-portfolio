@@ -119,7 +119,7 @@ export default function Process() {
 
                                         <div className="aspect-video rounded bg-neutral-800 flex items-center justify-center ring-1 ring-emerald-500/30">
                                             <div className="h-8 w-8 rounded-full bg-black flex items-center justify-center text-[10px] font-bold text-white border border-emerald-500/40">
-                                                DR
+                                                TL
                                             </div>
                                         </div>
                                     </div>
@@ -182,11 +182,11 @@ export default function Process() {
                                 <div className="rounded-xl bg-white border border-neutral-200 overflow-hidden shadow-lg">
                                     <div className="flex items-center gap-2 bg-neutral-50 px-3 py-2.5 border-b border-neutral-100">
                                         <div className="h-6 w-6 rounded-full bg-black flex items-center justify-center text-[8px] font-bold text-white">
-                                            DR
+                                            TL
                                         </div>
 
                                         <span className="text-xs font-medium text-neutral-700">
-                                            Daniel Rogerson
+                                            THIRD LINE
                                         </span>
 
                                         <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 ml-auto" />

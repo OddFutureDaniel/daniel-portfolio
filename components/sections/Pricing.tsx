@@ -44,7 +44,7 @@ export default function Pricing() {
           className="flex flex-col mb-10 w-full justify-center items-center"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
         >
           <Subheading
@@ -75,7 +75,7 @@ export default function Pricing() {
           className="flex flex-wrap items-start justify-center gap-4"
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
         >
           {/* ======================= STARTER CARD ======================= */}
@@ -83,7 +83,7 @@ export default function Pricing() {
             className="flex-1 min-w-[300px]  max-w-[350px] h-[480px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.20 }}
             transition={{ duration: 0.55, ease: "easeOut", delay: 0.0 }}
           >
             <Card className="relative rounded-2xl p-8 border w-full border-neutral-200 flex flex-col h-full">
@@ -97,7 +97,7 @@ export default function Pricing() {
                 <CardHeader className="mb-8">
                   <CardTitle align="center">Starter</CardTitle>
                   <CardDescription className="text-neutral-600!">Perfect for landing pages</CardDescription>
-                  <Subheading className={`${neueHaasDisplay.className} font-medium  text-black!`} size="lg">£500</Subheading>
+                  <Subheading className={`${neueHaasDisplay.className} font-medium  text-black!`} size="lg">£749</Subheading>
                 </CardHeader>
               </motion.div>
 

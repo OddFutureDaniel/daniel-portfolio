@@ -162,7 +162,7 @@ export default function Faqs() {
                 Do you handle hosting and deployment?
                 </AccordionHeader>
                 <AccordionPanel>
-                Yes. we'll deploy your site and help set up hosting, 
+                Yes. We'll deploy your site and help set up hosting, 
                 whether that&apos;s Shopify, Vercel or another provider. 
                 Everything is configured for performance, security and reliability.
                 </AccordionPanel>

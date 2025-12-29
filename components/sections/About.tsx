@@ -40,7 +40,7 @@ export default function About() {
                 className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`}
                 align="left"
               >
-                Built with intent. Made to last
+                Built with intent. Made to last.
               </Subheading>
             </div>
         </motion.div>

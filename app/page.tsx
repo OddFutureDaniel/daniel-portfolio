@@ -12,7 +12,7 @@ import BookACall from "@/components/sections/BookACall";
 export default function Home() {
       return (
             <div className="relative bg-neutral-50 text-neutral-950">
-                  {/* <BackgroundWaves /> */}
+                  
                   <Header />
                   <div className="flex flex-col items-center justify-center relative z-10  ">
                         <Hero />
@@ -27,4 +27,6 @@ export default function Home() {
                   <Footer />
             </div>
       );
+      
 }
+

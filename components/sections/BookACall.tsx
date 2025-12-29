@@ -23,7 +23,7 @@ export default function BookACall() {
                     className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 font-medium"
                     align="left"
                 >
-                    Contact Us
+                    Contact Us.
                 </Subheading>
 
                 <Subheading

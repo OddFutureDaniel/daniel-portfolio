@@ -135,7 +135,7 @@ export default function Projects() {
               align="left"
               id="projects-title"
             >
-              Recent projects
+              Recent projects.
             </Subheading>
 
             <p id="projects-help" className="sr-only">

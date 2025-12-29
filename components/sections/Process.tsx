@@ -37,7 +37,7 @@ export default function Process() {
                     className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`}
                     align="left"
                 >
-                    From initiation to execution
+                    From initiation to execution.
                 </Subheading>
             </motion.div>
 

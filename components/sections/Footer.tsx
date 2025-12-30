@@ -55,7 +55,7 @@ export default function Footer() {
                     <p className="text-xs text-neutral-400">© 2025 Daniel Rogerson. All rights reserved.
                     </p>
                     <div className="flex items-center gap-6">
-                        <a href="mailto:danielmatt@hotmail.co.uk" className="text-xs text-neutral-400 hover:text-neutral-600 transition-colors">danielmatt@hotmail.co.uk
+                        <a href="mailto:hello@thirdline.uk" className="text-xs text-neutral-400 hover:text-neutral-600 transition-colors">hello@thirdline.uk
                         </a>
                         <a href="tel:07979983123" className="text-xs text-neutral-400 hover:text-neutral-600 transition-colors">+44 7979 983 123
                         </a>

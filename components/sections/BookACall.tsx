@@ -68,10 +68,10 @@ export default function BookACall() {
                             </svg>
 
                             <a
-                                href="mailto:danielmatt@hotmail.co.uk"
+                                href="mailto:hello@thirdline.uk"
                                 className="text-sm font-medium text-neutral-700 hover:text-black"
                             >
-                                danielmatt@hotmail.co.uk
+                                hello@thirdline.uk
                             </a>
 
                             {/* <button

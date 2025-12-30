@@ -31,7 +31,7 @@ export default function About() {
           <div className=" bg-neutral-50 max-w-full px-8 flex flex-col items-center text-center z-10">
             
               <Subheading
-                className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 font-medium"
+                className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 "
                 align="left"
               >
                 Position

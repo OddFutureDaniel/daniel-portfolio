@@ -32,7 +32,10 @@ export default function Faqs() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
         >
-          <Subheading className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 font-medium" align="left">What Clients Ask</Subheading>
+          <Subheading
+            className="text-[16px] uppercase tracking-[0.2em] text-neutral-400 font-medium" align="left">
+            What Clients Ask
+          </Subheading>
         </motion.div>
 
 

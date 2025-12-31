@@ -29,7 +29,7 @@ export default function BookACall() {
                 <Subheading
                     className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-black!`} align="center"
                 >
-                    Lets work together
+                    Lets work together.
                 </Subheading>
             </motion.div>
             <div className="w-full">

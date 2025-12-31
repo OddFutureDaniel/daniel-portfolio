@@ -114,7 +114,7 @@ export default function AIAgent() {
               <h2
                 className={`${neueHaasDisplay.className} mt-4 text-3xl md:text-4xl font-semibold tracking-tight`}
               >
-                AI chatbots built for real use
+                AI chatbots built for real use.
               </h2>
 
               <p className="mt-4 text-neutral-300">

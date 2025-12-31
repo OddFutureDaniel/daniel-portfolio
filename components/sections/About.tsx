@@ -206,8 +206,10 @@ export default function About() {
                       Lead Developer
                     </div>
                   </div>
-                  <div className="ml-auto h-2 w-2 rounded-full bg-emerald-500">
-                  </div>
+                  <span className="relative ml-auto flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 animate-ping opacity-75 will-change-transform" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  </span>
                 </div>
               </div>
               <div className="h-auto w-auto rounded-2xl mt-8 p-1 bg-neutral-950">

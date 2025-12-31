@@ -48,7 +48,7 @@ export default function Pricing() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
         >
           <Subheading
-            className="uppercase tracking-[0.2em] mb-1"
+            className="text-[16px] uppercase tracking-[0.2em] mb-1"
             align="left"
           >
             Pricing

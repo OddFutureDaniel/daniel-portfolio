@@ -80,7 +80,7 @@ export default function Process() {
                         >
                             <CardDescription>
                                 <Subheading className="text-[16px] text-neutral-500 leading-relaxed mb-8">
-                                    A conversation to define the problem, scope and direction.
+                                    A conversation to define your goals, scope and direction.
                                 </Subheading>
                             </CardDescription>
                         </motion.div>

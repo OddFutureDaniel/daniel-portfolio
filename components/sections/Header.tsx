@@ -45,15 +45,15 @@ export default function Header() {
             >
                 <Link href="/" className="inline-flex items-center" aria-label="THIRD LINE">
 
-                    <svg 
-                    id="Layer_1" 
-                    data-name="Layer 1" 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    
+                    <svg
+                        id="Layer_1"
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
 
-                    viewBox="0 0 941.24 107.25"
+
+                        viewBox="0 0 941.24 107.25"
                         role="img"
-                        aria-hidden="true" 
+                        aria-hidden="true"
                         focusable="false"
                         className="h-4 w-auto block"
 

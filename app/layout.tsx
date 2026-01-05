@@ -15,8 +15,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "THIRD LINE",
-  description: "Designed with intent. Live in 72 hours.",
+  metadataBase: new URL("https://thirdline.uk"),
+  title: "Third Line — Web Design & Development Built With Intent",
+  description:
+    "Third Line initiates and executes digital work for brands that value clarity, reliability and control. Websites, systems and ongoing support.",
+  alternates: { canonical: "/" },
+
+  openGraph: {
+    type: "website",
+    url: "https://thirdline.uk/",
+    siteName: "THIRD LINE",
+    title: "Third Line — Web Design & Development Built With Intent",
+    description:
+      "Third Line initiates and executes digital work for brands that value clarity, reliability and control. Websites, systems and ongoing support.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "THIRD LINE",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Third Line — Web Design & Development Built With Intent",
+    description:
+      "Third Line initiates and executes digital work for brands that value clarity, reliability and control. Websites, systems and ongoing support.",
+    images: ["/og.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "THIRD LINE",
+  url: "https://thirdline.uk/",
+  email: "mailto:hello@thirdline.uk",
 };
 
 export default function RootLayout({
@@ -27,15 +68,18 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <GoogleTagManager gtmId="GTM-T56NNVGR" />
-
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Skip link for keyboard users */}
         <Link
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-9999 focus:rounded-full focus:bg-black focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999] focus:rounded-full focus:bg-black focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
         >
           Skip to content
         </Link>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
 
         <main id="main-content">{children}</main>
       </body>

@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy Policy | THIRD LINE",
   description: "Privacy policy for THIRD LINE",
 };
@@ -57,7 +58,7 @@ export default function PrivacyPage() {
         <h2 className="text-lg font-medium mt-6">Contact</h2>
         <p>
           If you have any questions about this privacy policy, you can contact us
-          at: <strong>danielmatt@hotmail.co.uk</strong>
+          at: <strong>hello@thirdline.uk</strong>
         </p>
       </section>
     </main>

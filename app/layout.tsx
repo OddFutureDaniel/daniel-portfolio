@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       "Third Line initiates and executes digital work for brands that value clarity, reliability and control. Websites, systems and ongoing support.",
     images: [
       {
-        url: "/og1.png",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "THIRD LINE",

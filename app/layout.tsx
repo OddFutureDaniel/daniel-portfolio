@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     ],
     videos: [
       {
-        url: "https://thirdline.uk/og.mp4",
+        url: "https://thirdline.uk/og.gif",
         width: 1200,
         height: 630,
         type: "video/mp4",

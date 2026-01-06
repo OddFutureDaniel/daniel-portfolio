@@ -31,20 +31,28 @@ export const metadata: Metadata = {
       "Third Line initiates and executes digital work for brands that value clarity, reliability and control. Websites, systems and ongoing support.",
     images: [
       {
-        url: "/opengraph.png",
+        url: "https://thirdline.uk/opengraph.jpg",
         width: 1200,
         height: 630,
         alt: "THIRD LINE",
       },
     ],
+    videos: [
+      {
+        url: "https://thirdline.uk/og.mp4",
+        width: 1200,
+        height: 630,
+        type: "video/mp4",
+      },
+    ],
   },
-
+  
   twitter: {
     card: "summary_large_image",
     title: "Third Line — Web Design & Development Built With Intent",
     description:
       "Third Line initiates and executes digital work for brands that value clarity, reliability and control. Websites, systems and ongoing support.",
-    images: ["/opengraph.png"],
+    images: ["https://thirdline.uk/opengraph.jpg"],
   },
 
   robots: {

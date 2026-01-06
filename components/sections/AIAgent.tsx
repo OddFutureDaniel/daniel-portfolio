@@ -36,7 +36,7 @@ export default function AIAgent() {
             aria-hidden
             className="pointer-events-none absolute top-8 right-8 hidden lg:block z-0"
           >
-            <div className="w-[300px] rotate-[3.5deg] rounded-2xl border border-neutral-800/80 bg-white/[0.03] backdrop-blur-sm shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
+            <div className="w-[300px] rotate-[3.5deg] rounded-2xl border border-neutral-800/80 bg-white/3 backdrop-blur-sm shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
               <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-800/70">
                 <div className="flex items-center gap-2">
                 <span className="relative ml-auto flex h-2 w-2">
@@ -82,7 +82,7 @@ export default function AIAgent() {
           {/* Glow + grid */}
           <div
             aria-hidden
-            className="pointer-events-none absolute -top-32 left-1/2 h-72 w-[48rem] -translate-x-1/2 rounded-full bg-white/10 blur-3xl"
+            className="pointer-events-none absolute -top-32 left-1/2 h-72 w-3xl -translate-x-1/2 rounded-full bg-white/10 blur-3xl"
           />
           <div
             aria-hidden
@@ -139,7 +139,7 @@ export default function AIAgent() {
             >
               {/* What it does (top row, centred, with space for overlay on the right) */}
               <motion.div
-                className="rounded-2xl border border-neutral-800/80 bg-white/[0.03] p-6 backdrop-blur-sm lg:col-span-6 lg:col-start-1 lg:row-start-1"
+                className="rounded-2xl border border-neutral-800/80 bg-white/3 p-6 backdrop-blur-sm lg:col-span-6 lg:col-start-1 lg:row-start-1"
                 style={{ minWidth: 250 }}
                 variants={{
                   hidden: { opacity: 0, y: 18, scale: 0.98 },
@@ -180,7 +180,7 @@ export default function AIAgent() {
 
               {/* How it works (bottom left) */}
               <motion.div
-                className="rounded-2xl border border-neutral-800/80 bg-white/[0.03] p-6 backdrop-blur-sm lg:col-span-6 lg:col-start-1 lg:row-start-2"
+                className="rounded-2xl border border-neutral-800/80 bg-white/3 p-6 backdrop-blur-sm lg:col-span-6 lg:col-start-1 lg:row-start-2"
                 style={{ minWidth: 250 }}
                 variants={{
                   hidden: { opacity: 0, y: 18, scale: 0.98 },
@@ -218,7 +218,7 @@ export default function AIAgent() {
 
               {/* Why it matters (bottom right) */}
               <motion.div
-                className="rounded-2xl border border-neutral-800/80 bg-white/[0.03] p-6 backdrop-blur-sm lg:col-span-6 lg:col-start-7 lg:row-start-2"
+                className="rounded-2xl border border-neutral-800/80 bg-white/3 p-6 backdrop-blur-sm lg:col-span-6 lg:col-start-7 lg:row-start-2"
                 style={{ minWidth: 250 }}
                 variants={{
                   hidden: { opacity: 0, y: 18, scale: 0.98 },

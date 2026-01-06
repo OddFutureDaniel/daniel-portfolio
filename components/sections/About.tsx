@@ -212,8 +212,9 @@ export default function About() {
                   </span>
                 </div>
               </div>
-              <div className="h-auto w-auto rounded-2xl mt-8 p-1 bg-neutral-950">
-                <p className="m-2 p-1 text-neutral-50">Open to collaborations with designers, founders, and people with strong ideas.</p>
+              <div className="h-auto w-auto rounded-2xl mt-8 p-1 border  bg-[#252526] backdrop-blur-sm">
+                
+                <p className="m-2 p-1 text-sm text-neutral-300 space-y-2.5">Open to collaborations with designers, founders, and people with strong ideas.</p>
 
               </div>
             </div>

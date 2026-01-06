@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Third Line — Web Design & Development Built With Intent",
     description:
       "Third Line initiates and executes digital work for brands that value clarity, reliability and control. Websites, systems and ongoing support.",
-    images: ["/og.png"],
+    images: ["/og2.png"],
   },
 
   robots: {

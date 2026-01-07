@@ -52,7 +52,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="mt-16 pt-8 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-xs text-neutral-400">© 2025 THIRD LINE. All rights reserved.
+                    <p className="text-xs text-neutral-400">© 2026 THIRD LINE. All rights reserved.
                     </p>
                     <div className="flex items-center gap-6">
                         <a href="mailto:hello@thirdline.uk" className="text-xs text-neutral-400 hover:text-neutral-600 transition-colors">hello@thirdline.uk

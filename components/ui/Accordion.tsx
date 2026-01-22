@@ -7,10 +7,16 @@ type AccordionProps = {
   children: React.ReactNode;
   multiple?: boolean;
   defaultIndex?: number | number[];
+  className?: string;
+
+  // ✅ controlled support
+  activeIndex?: number | number[];
+  onActiveIndexChange?: (next: number | number[]) => void;
 };
 
 type AccordionItemProps = {
   children: React.ReactNode;
+  itemIndex?: number; // ✅
 };
 
 type AccordionHeaderProps = {
@@ -43,62 +49,86 @@ export function Accordion({
   children,
   multiple = false,
   defaultIndex,
+  className,
+  activeIndex: controlledActiveIndex,
+  onActiveIndexChange,
 }: AccordionProps) {
-  const [activeIndex, setActiveIndex] = React.useState<number | number[]>(() => {
-    if (multiple) {
-      if (Array.isArray(defaultIndex)) return defaultIndex;
-      if (typeof defaultIndex === "number") return [defaultIndex];
-      return [];
-    } else {
-      if (typeof defaultIndex === "number") return defaultIndex;
-      return -1;
-    }
-  });
+  const [uncontrolledActiveIndex, setUncontrolledActiveIndex] =
+    React.useState<number | number[]>(() => {
+      if (multiple) {
+        if (Array.isArray(defaultIndex)) return defaultIndex;
+        if (typeof defaultIndex === "number") return [defaultIndex];
+        return [];
+      } else {
+        if (typeof defaultIndex === "number") return defaultIndex;
+        return -1;
+      }
+    });
+
+  const activeIndex =
+    controlledActiveIndex !== undefined
+      ? controlledActiveIndex
+      : uncontrolledActiveIndex;
+
+  function setActive(next: number | number[]) {
+    if (onActiveIndexChange) onActiveIndexChange(next);
+    if (controlledActiveIndex === undefined) setUncontrolledActiveIndex(next);
+  }
 
   function onChangeIndex(index: number) {
-    setActiveIndex((current) => {
+    setActive((() => {
       if (!multiple) {
-        return current === index ? -1 : index;
+        const current = Array.isArray(activeIndex) ? -1 : activeIndex;
+        return current === index ? -1 : index; // ✅ click same closes
       }
 
-      const arr = Array.isArray(current) ? current : [];
-      if (arr.includes(index)) {
-        return arr.filter((i) => i !== index);
-      }
-
+      const arr = Array.isArray(activeIndex) ? activeIndex : [];
+      if (arr.includes(index)) return arr.filter((i) => i !== index);
       return arr.concat(index);
-    });
+    })());
   }
 
   return (
-    <>
+    <div className={className}>
       {React.Children.map(children, (child, index) => {
         if (!React.isValidElement(child)) return child;
-
+  
+        // ✅ use provided itemIndex if it exists
+        const providedIndex =
+          typeof (child.props as any).itemIndex === "number"
+            ? (child.props as any).itemIndex
+            : index;
+  
         const isActive = Array.isArray(activeIndex)
-          ? activeIndex.includes(index)
-          : activeIndex === index;
-
+          ? activeIndex.includes(providedIndex)
+          : activeIndex === providedIndex;
+  
         return (
           <AccordionContext.Provider
-            value={{ isActive, index, onChangeIndex }}
+            value={{
+              isActive,
+              index: providedIndex,
+              onChangeIndex,
+            }}
           >
             {child}
           </AccordionContext.Provider>
         );
       })}
-    </>
+    </div>
   );
 }
 
+
 export function AccordionItem({ children }: AccordionItemProps) {
   return (
-    <div className=" md:w-150 w-auto mb-4 overflow-hidden rounded-xl border border-neutral-200 bg-white/80 shadow-sm backdrop-blur-sm">
+    <div className="w-full mb-4 overflow-hidden rounded-xl border border-neutral-200 bg-white/80 shadow-sm backdrop-blur-sm">
       {children}
     </div>
   );
 }
 
+// rest unchanged...
 export function AccordionHeader({ children }: AccordionHeaderProps) {
   const { isActive, index, onChangeIndex } = useAccordion();
 

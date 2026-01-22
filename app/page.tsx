@@ -9,6 +9,7 @@ import Projects from "@/components/sections/Projects";
 import Testimonial from "@/components/sections/Testimonial";
 import BookACall from "@/components/sections/BookACall";
 import AIAgent from "@/components/sections/AIAgent";
+import Referral from "@/components/sections/Referral";
 
 export default function Home() {
       return (
@@ -24,6 +25,7 @@ export default function Home() {
                         <AIAgent />
                         <About />
                         <BookACall />
+                        <Referral/>
                         <Faqs />
                   </div>
                   <Footer />

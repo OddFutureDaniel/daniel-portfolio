@@ -80,7 +80,7 @@ export default function Pricing() {
         >
           {/* ======================= STARTER CARD ======================= */}
           <motion.div
-            className="flex-1 min-w-[300px]  max-w-[350px] h-[480px]"
+            className="flex-1 min-w-[300px]  max-w-[350px] h-[520px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.20 }}
@@ -95,7 +95,7 @@ export default function Pricing() {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.08 }}
               >
                 <CardHeader className="mb-8">
-                  <CardTitle align="center">Starter</CardTitle>
+                  <CardTitle align="center">Single Page Build</CardTitle>
                   <CardDescription className="text-neutral-600!">Perfect for landing pages</CardDescription>
                   <Subheading className={`${neueHaasDisplay.className} font-medium  text-black!`} size="lg">£749</Subheading>
                 </CardHeader>
@@ -103,18 +103,19 @@ export default function Pricing() {
 
               {/* Content */}
               <motion.div
+                className="flex flex-col flex-1"
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.16 }}
               >
-                <CardContent>
-                  <ul className="space-y-3 mb-8 flex-1">
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
+                <CardContent className="flex flex-col flex-1">
+                  <ul className="space-y-3 flex-1">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -126,13 +127,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Single landing page
+                      Purpose-driven layout built around a single narrative
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -144,13 +145,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Mobile responsive
+                      Seamless, responsive experience across devices
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -162,13 +163,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Live in 72 hours
+                      Designed for speed and clarity, not complexity
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -180,13 +181,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      SEO optimized
+                      Ideal for portfolios, launches, events, and product showcases
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -198,7 +199,7 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      1 revision round
+                      Fast turnaround when content is ready
                     </li>
                   </ul>
                 </CardContent>
@@ -206,7 +207,7 @@ export default function Pricing() {
 
               {/* Button */}
               <motion.div
-                className="mt-auto"
+                className="mt-auto pt-1 h-11"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -222,21 +223,13 @@ export default function Pricing() {
 
           {/* ==================== PROFESSIONAL CARD ==================== */}
           <motion.div
-            className="flex-1 min-w-[300px] max-w-[350px] h-[480px] "
+            className="flex-1 min-w-[300px] max-w-[350px] h-[520px] "
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55, ease: "easeOut", delay: 0.08 }}
           >
-            <Card className="relative rounded-2xl p-8 border w-full bg-neutral-900! border-neutral-200 h-[480px] flex flex-col">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-medium text-black shadow-lg">
-                  <svg className="h-3 w-3 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                    </path>
-                  </svg>Most Popular
-                </span>
-              </div>
+            <Card className="relative rounded-2xl p-8 border w-full bg-neutral-900! border-neutral-200 flex flex-col h-full">
               {/* Header */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -245,27 +238,27 @@ export default function Pricing() {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.16 }}
               >
                 <CardHeader className="mb-8">
-                  <CardTitle className="text-neutral-50!" align="center">Professional</CardTitle>
-                  <CardDescription className="text-neutral-50!">Complete website solution</CardDescription>
+                  <CardTitle className="text-neutral-50!" align="center">Website Build</CardTitle>
+                  <CardDescription className="text-neutral-50!">Complete multi-page website</CardDescription>
                   <Subheading className={`${neueHaasDisplay.className} font-medium  text-neutral-50!`} size="lg">£1250</Subheading>
                 </CardHeader>
               </motion.div>
 
               {/* Content */}
               <motion.div
+                className="flex flex-col flex-1"
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.24 }}
               >
-
-                <CardContent >
-                  <ul className="space-y-3 mb-8 flex-1">
-                    <li className="flex items-center  gap-3 text-sm text-neutral-50!">
+                <CardContent className="flex flex-col flex-1">
+                  <ul className="space-y-3 flex-1">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-50!">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-emerald-400"
+                        className="h-4 w-4 text-emerald-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -277,13 +270,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Up to 5 pages
+                      Clear page structure with defined roles and user journeys
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-50!">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-50!">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-emerald-400"
+                        className="h-4 w-4 text-emerald-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -295,13 +288,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      GA4 analytics setup
+                      Consistent design system applied across key pages
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-50!">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-50!">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-emerald-400"
+                        className="h-4 w-4 text-emerald-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -313,13 +306,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Live in 72 hours
+                      Built to scale as your content or business evolves
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-50!">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-50!">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-emerald-400"
+                        className="h-4 w-4 text-emerald-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -331,13 +324,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      CMS setup for easy editing
+                      Full control over your content after launch
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-50!">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-50!">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-emerald-400"
+                        className="h-4 w-4 text-emerald-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -349,25 +342,7 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Performance optimisation
-                    </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-50!">
-                      <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        className="h-4 w-4 text-emerald-400"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                        />
-                      </svg>
-                      3 revision rounds
+                      Suitable for most businesses and organisations
                     </li>
                   </ul>
                 </CardContent>
@@ -375,7 +350,7 @@ export default function Pricing() {
 
               {/* Button */}
               <motion.div
-                className="mt-auto"
+                className="mt-auto pt-1 h-11!"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -391,13 +366,13 @@ export default function Pricing() {
 
           {/* ==================== ENTERPRISE CARD ==================== */}
           <motion.div
-            className="flex-1 min-w-[300px] max-w-[350px] h-[480px] "
+            className="flex-1 min-w-[300px] max-w-[350px] h-[520px] "
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55, ease: "easeOut", delay: 0.16 }}
           >
-            <Card className="relative rounded-2xl w-full p-8 border border-neutral-200 h-[480px] flex flex-col">
+            <Card className="relative rounded-2xl p-8 border w-full border-neutral-200 flex flex-col h-full">
               {/* Header */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -406,26 +381,27 @@ export default function Pricing() {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.20 }}
               >
                 <CardHeader className="mb-8">
-                  <CardTitle align="center">Enterprise</CardTitle>
-                  <CardDescription className="text-neutral-600!">For bespoke needs</CardDescription>
+                  <CardTitle align="center">Custom Build</CardTitle>
+                  <CardDescription className="text-neutral-600!">Complex or bespoke requirements</CardDescription>
                   <Subheading className={`${neueHaasDisplay.className} font-medium  text-black!`} size="lg">Custom</Subheading>
                 </CardHeader>
               </motion.div>
 
               {/* Content */}
               <motion.div
+                className="flex flex-col flex-1"
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.28 }}
               >
-                <CardContent>
-                  <ul className="space-y-3 mb-8 flex-1">
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
+                <CardContent className="flex flex-col flex-1">
+                  <ul className="space-y-3 flex-1">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -437,31 +413,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Custom website build
-                    </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
-                      <svg
-                        aria-hidden="true"
-                        focusable="false"
-                        className="h-4 w-4 text-neutral-400"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                        />
-                      </svg>
-                      Custom CMS workflows
+                      Scope defined collaboratively based on your needs
                     </li>
                     <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -473,13 +431,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Advanced integrations (apps, APIs, bookings, etc.)
+                      Flexible architecture for complex content or interactions
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -491,13 +449,13 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Scalable architecture
+                      Suitable for large sites, e-commerce, or bespoke functionality
                     </li>
-                    <li className="flex items-center gap-3 text-sm text-neutral-600">
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
                       <svg
                         aria-hidden="true"
                         focusable="false"
-                        className="h-4 w-4 text-neutral-400"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
                         viewBox="0 0 24 24"
                         fill="none"
                       >
@@ -509,7 +467,25 @@ export default function Pricing() {
                           strokeWidth="2.5"
                         />
                       </svg>
-                      Priority support & handover
+                      Designed and built without predefined limits
+                    </li>
+                    <li className="flex items-center text-left gap-3 text-sm text-neutral-600">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        className="h-4 w-4 text-neutral-400 shrink-0"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.89163 13.2687L9.16582 17.5427L18.7085 8"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                        />
+                      </svg>
+                      Quoted individually following discovery
                     </li>
                   </ul>
                 </CardContent>
@@ -517,7 +493,7 @@ export default function Pricing() {
 
               {/* Button */}
               <motion.div
-                className="mt-auto"
+                className="mt-auto h-11"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

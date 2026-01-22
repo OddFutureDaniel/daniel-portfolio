@@ -11,7 +11,7 @@ export default function BookACall() {
 
         <Section
             id="calendar"
-            className="max-w-full px-8 flex flex-col items-center" >
+            className="max-w-full py-0! px-8 flex flex-col items-center" >
             <motion.div
                 className="flex flex-col mb-10 w-full justify-center items-center"
                 initial={{ opacity: 0, y: 16 }}
@@ -73,67 +73,8 @@ export default function BookACall() {
                             >
                                 hello@thirdline.uk
                             </a>
-
-                            {/* <button
-                            type="button"
-                            className="relative inline-flex items-center justify-center overflow-hidden rounded-full p-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 border border-black/10 bg-neutral-100 text-black hover:bg-white focus:ring-black/30 h-7 w-7"
-                            aria-live="polite"
-                            aria-label="Copy to clipboard"
-                            tabIndex={0}
-                            style={{ transform: "none" }}
-                        >
-                            <span
-                                aria-hidden="true"
-                                className="pointer-events-none absolute inset-0 rounded-full bg-black/10"
-                                style={{ opacity: 0, transform: "none" }}
-                            />
-
-                            <div className="relative grid place-items-center">
-                                <span
-                                    aria-hidden="true"
-                                    className="invisible col-start-1 row-start-1 inline-flex items-center gap-2"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth={2}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <path d="M20 6 9 17l-5-5" />
-                                    </svg>
-                                </span>
-
-                                <span
-                                    className="col-start-1 row-start-1 inline-flex items-center gap-2"
-                                    style={{ opacity: 1, transform: "none" }}
-                                >
-                                    <span style={{ transform: "none" }}>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            strokeWidth={2}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        >
-                                            <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-                                            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-                                        </svg>
-                                    </span>
-                                </span>
-                            </div>
-                        </button> */}
                         </div>
 
-                        {/* Phone */}
                         <div className="group flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 transition-all hover:border-neutral-300 hover:shadow-md">
                             <svg
                                 className="h-4 w-4 text-neutral-400"

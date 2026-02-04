@@ -6,26 +6,40 @@ import Image from 'next/image';
 export default function Footer() {
     const [showFrame, setShowFrame] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     const images = [
         '/projects/SkynMapsLogo.webp',
         '/projects/GlowIvDripsLogo.png',
         '/projects/JaffaSabaLogo.avif',
         '/projects/730CarlinaLogo.webp',
-        '/projects/TheChiqueEventsLogo.svg',
     ];
 
     useEffect(() => {
         if (showFrame) {
             const interval = setInterval(() => {
                 setCurrentImageIndex((prev) => (prev + 1) % images.length);
-            }, 300);
+            }, 400);
 
             return () => clearInterval(interval);
         } else {
-            setCurrentImageIndex(0); // Reset when not showing
+            setCurrentImageIndex(0);
         }
     }, [showFrame, images.length]);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+
+        if (showFrame) {
+            window.addEventListener('mousemove', handleMouseMove);
+        }
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, [showFrame]);
     
     return (
         <>
@@ -80,13 +94,18 @@ export default function Footer() {
             
             {showFrame && (
                 <div 
-                    className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] bg-[#909090] pointer-events-none overflow-hidden"
+                    className="fixed w-[100px] h-[100px] bg-[#909090]/95 pointer-events-none overflow-hidden flex items-center justify-center p-4"
+                    style={{
+                        left: `${mousePosition.x}px`,
+                        top: `${mousePosition.y}px`,
+                        transform: 'translate(9%, 18%)'
+                    }}
                 >
                     <Image
                         src={images[currentImageIndex]}
                         alt="Client work"
                         fill
-                        className="object-contain p-6!"
+                        className="object-contain p-2!"
                     />
                 </div>
             )}

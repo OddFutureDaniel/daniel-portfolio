@@ -6,7 +6,7 @@ import { GridContainer } from "../ui/GridContainer";
 import { ProjectDetails } from '../ui/ProjectDetails';
 
 export default function IndexTable() {
-    const [expandedRow, setExpandedRow] = useState<number | null>(null);
+    const [expandedRow, setExpandedRow] = useState<number | null>(1);
 
     const rows = [
         { id: 1, year: '2026', client: 'Jaffa Saba', type: 'Website', tech: 'Shopify' },

@@ -1,36 +1,16 @@
-import Hero from "@/components/sections/Hero";
-import Process from "@/components/sections/Process";
-import Pricing from "@/components/sections/Pricing";
 import About from "@/components/sections/About";
 import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
-import Faqs from "@/components/sections/FAQs";
-import Projects from "@/components/sections/Projects";
-import Testimonial from "@/components/sections/Testimonial";
-import BookACall from "@/components/sections/BookACall";
-import AIAgent from "@/components/sections/AIAgent";
-import Referral from "@/components/sections/Referral";
+import IndexTable from "@/components/sections/IndexTable";
 
-export default function Home() {
+export default function Page() {
       return (
-            <div className="relative bg-neutral-50 text-neutral-950">
-
+            <section className="leading-tight">
                   <Header />
-                  <div className="flex flex-col items-center justify-center relative z-10  ">
-                        <Hero />
-                        <Process />
-                        <Testimonial />
-                        <Projects />
-                        <Pricing />
-                        <AIAgent />
-                        <About />
-                        <BookACall />
-                        <Referral/>
-                        <Faqs />
-                  </div>
-                  <Footer />
-            </div>
+                  <IndexTable />
+                  <About />
+                  <Footer/>
+            </section>
+
       );
-
 }
-

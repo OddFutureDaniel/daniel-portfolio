@@ -12,6 +12,7 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: https:;
   font-src 'self' data:;
+  media-src 'self' https://res.cloudinary.com;
   connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://app.cal.com;
   frame-src https://app.cal.com;
   object-src 'none';

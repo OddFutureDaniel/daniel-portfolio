@@ -13,13 +13,14 @@ export default function Footer() {
         '/projects/GlowIvDripsLogo.png',
         '/projects/JaffaSabaLogo.avif',
         '/projects/730CarlinaLogo.webp',
+        '/projects/EstieeLogoSite.png',
     ];
 
     useEffect(() => {
         if (showFrame) {
             const interval = setInterval(() => {
                 setCurrentImageIndex((prev) => (prev + 1) % images.length);
-            }, 400);
+            }, 300);
 
             return () => clearInterval(interval);
         } else {
@@ -90,11 +91,14 @@ export default function Footer() {
                         <a href="https://www.linkedin.com/company/third-line-studio" target="_blank">LinkedIn</a>
                     </div>
                 </GridContainer>
+                <div className="mt-15! mb-6!">
+                    ALL RIGHTS RESERVED 2026 Third Line
+                </div>
             </footer>
             
             {showFrame && (
                 <div 
-                    className="fixed w-[100px] h-[100px] bg-[#909090]/95 pointer-events-none overflow-hidden flex items-center justify-center p-4"
+                    className="fixed w-[100px] h-[100px] bg-[#d9d9d9] pointer-events-none overflow-hidden flex items-center justify-center p-4"
                     style={{
                         left: `${mousePosition.x}px`,
                         top: `${mousePosition.y}px`,

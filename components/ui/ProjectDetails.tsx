@@ -19,11 +19,11 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
                                 },
                                 {
                                     type: 'video',
-                                    src: '/projects/JaffasSabaSR.mov',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/video/upload/fl_progressive,q_auto/JaffasSabaSR_hnxl1t_ii1w2d.mp4',
                                     alt: 'Video of Jaffa Saba Portfolio Site',
                                     frameWidth: 650,
                                     imageWidth: 650
-                                },
+                                  },
                                 {
                                     type: 'image',
                                     src: '/projects/eyesofnazareth2.webp',

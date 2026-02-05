@@ -34,6 +34,7 @@ export function Carousel({ items, frameHeight = 600 }: CarouselProps) {
                                 alt={item.alt || ''}
                                 width={item.imageWidth || (item.frameWidth - 64)}
                                 height={frameHeight - 64}
+                                quality={100}
                                 className="object-contain"
 
                             />

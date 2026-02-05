@@ -12,7 +12,7 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
                             items={[
                                 {
                                     type: 'image',
-                                    src: '/projects/Replica-T-Shirt.jpg',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/Replica-T-Shirt_akuq0n',
                                     alt: "Jaffa Saba Red Bull Visa Cashapp Collab",
                                     frameWidth: 420,
                                     imageWidth: 290
@@ -27,14 +27,14 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
                                   },
                                 {
                                     type: 'image',
-                                    src: '/projects/eyesofnazareth2.webp',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/eyesofnazareth2_c9wnt8',
                                     alt: 'Eyes of Nazareth',
                                     frameWidth: 400,
                                     imageWidth: 360
                                 },
                                 {
                                     type: 'image',
-                                    src: '/projects/Jaffa Saba Shopify Portfolio Site Project.png',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/Jaffa_Saba_Shopify_Portfolio_Site_Project_ipvyfn',
                                     alt: "Jaffa Saba Project",
                                     frameWidth: 600,
                                     imageWidth: 500
@@ -60,7 +60,7 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
                             items={[
                                 {
                                     type: 'image',
-                                    src: '/projects/IMG_7427.png',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/IMG_7427_vhcwht',
                                     alt: "730Carlina BB.Simon Belts",
                                     frameWidth: 420,
                                     imageWidth: 290
@@ -75,14 +75,14 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
                                   },
                                 {
                                     type: 'image',
-                                    src: '/projects/IMG_5698.png',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/IMG_5698_mre21z',
                                     alt: 'BB Belt Promo Image',
                                     frameWidth: 400,
                                     imageWidth: 300
                                 },
                                 {
                                     type: 'image',
-                                    src: '/projects/kirbychain.png',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/04B2D23A-D8B1-40F8-9223-97C99E0A9C56_iyar9l',
                                     alt: "Kirby Chain",
                                     frameWidth: 300,
                                     imageWidth: 300
@@ -104,7 +104,7 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
                             items={[
                                 {
                                     type: 'image',
-                                    src: '/projects/Skynmapssc1.png',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/Screenshot_2026-02-02_at_15.25.35_icvmns',
                                     alt: "SkynMaps Website",
                                     frameWidth: 650,
                                     imageWidth: 650
@@ -119,14 +119,14 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
                                   },
                                 {
                                     type: 'image',
-                                    src: '/projects/Skynmapssc2.png',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/Screenshot_2026-02-02_at_15.26.45_wz1qzk',
                                     alt: 'SkynMaps Website',
                                     frameWidth: 650,
                                     imageWidth: 650
                                 },
                                 {
                                     type: 'image',
-                                    src: '/projects/kirbychain.png',
+                                    src: 'https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/',
                                     alt: "Jaffa Saba Project",
                                     frameWidth: 300,
                                     imageWidth: 300

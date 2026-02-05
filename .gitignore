@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+public/projects/*
+!public/projects/*.svg
+
 # testing
 /coverage
 

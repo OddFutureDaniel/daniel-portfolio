@@ -6,6 +6,7 @@ import IndexTable from "@/components/sections/IndexTable";
 export default function Page() {
       return (
             <section className="leading-tight">
+                 <div className="h-10 mobile:bg-red-500 mid:bg-green-500 desktop:bg-blue-500" />
                   <Header />
                   <IndexTable />
                   <About />

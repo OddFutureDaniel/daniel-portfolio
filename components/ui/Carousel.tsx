@@ -1,63 +1,92 @@
 // components/Carousel.tsx
-import Image from 'next/image';
+import Image from "next/image";
 
 interface CarouselItem {
-    type: 'image' | 'video';
-    src: string;
-    alt?: string;
-    frameWidth: number;
+  type: "image" | "video";
+  src: string;
+  alt?: string;
+  frameWidth: number;
+  imageWidth?: number;
+  poster?: string;
+  mobile?: {
+    frameWidth?: number;
     imageWidth?: number;
-    poster?: string;
+  };
 }
 
 interface CarouselProps {
-    items: CarouselItem[];
-    frameHeight?: number;
+  items: CarouselItem[];
+  frameHeight?: number;
+  mobileFrameHeight?: number;
+  isMobile?: boolean;
 }
 
-export function Carousel({ items, frameHeight = 600 }: CarouselProps) {
-    return (
-        <div className="w-full overflow-x-auto scrollbar-hide">
-            <div className="flex gap-4">
-                {items.map((item, index) => (
-                    <div
-                        key={index}
-                        className="shrink-0 bg-[#d9d9d9]/20 flex items-center justify-center p-8 overflow-hidden"
-                        style={{
-                            height: `${frameHeight}px`,
-                            width: `${item.frameWidth}px`
-                        }}
-                    >
-                        {item.type === 'image' ? (
-                            <Image
-                                src={item.src}
-                                alt={item.alt || ''}
-                                width={item.imageWidth || (item.frameWidth - 64)}
-                                height={frameHeight - 64}
-                                quality={100}
-                                className="object-contain"
+function clamp(n: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, n));
+}
 
-                            />
-                        ) : (
-                            <video
-                            poster={item.poster}
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                preload="metadata"
-                                className="object-cover"
-                                style={{
-                                    width: `${item.imageWidth || (item.frameWidth - 64)}px`,
-                                    height: `${frameHeight - 64}px`,
-                                }}
-                            >
-                                <source src={item.src} type="video/mp4" />
-                            </video>
-                        )}
-                    </div>
-                ))}
+export function Carousel({
+  items,
+  frameHeight = 600,
+  mobileFrameHeight = 420,
+  isMobile = false,
+}: CarouselProps) {
+  const h = isMobile ? mobileFrameHeight : frameHeight;
+
+  return (
+    <div className="w-full overflow-x-auto scrollbar-hide">
+      <div className="flex gap-4">
+        {items.map((item, index) => {
+          const rawFrameW = isMobile
+            ? item.mobile?.frameWidth ?? item.frameWidth
+            : item.frameWidth;
+
+          // Safety: don't let frames exceed the viewport on mobile
+          const frameW = isMobile ? clamp(rawFrameW, 220, 420) : rawFrameW;
+
+          const rawImgW = isMobile
+            ? item.mobile?.imageWidth ??
+              item.imageWidth ??
+              item.mobile?.frameWidth ??
+              item.frameWidth
+            : item.imageWidth ?? item.frameWidth;
+
+          const imgW = isMobile ? clamp(rawImgW, 200, frameW) : rawImgW;
+
+          return (
+            <div
+              key={index}
+              className="shrink-0 bg-[#d9d9d9]/20 flex items-center justify-center overflow-hidden"
+              style={{ height: `${h}px`, width: `${frameW}px` }}
+            >
+              {item.type === "image" ? (
+                <Image
+                  src={item.src}
+                  alt={item.alt || ""}
+                  width={imgW}
+                  height={h}
+                  quality={100}
+                  className="object-contain h-auto"
+                  sizes={`${frameW}px`}
+                />
+              ) : (
+                <video
+                  poster={item.poster}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="object-cover mobile:object-contain"
+                  style={{ width: `${imgW}px`, height: `${h}px` }}
+                >
+                  <source src={item.src} type="video/mp4" />
+                </video>
+              )}
             </div>
-        </div>
-    );
+          );
+        })}
+      </div>
+    </div>
+  );
 }

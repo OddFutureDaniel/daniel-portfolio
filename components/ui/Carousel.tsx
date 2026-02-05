@@ -7,6 +7,7 @@ interface CarouselItem {
     alt?: string;
     frameWidth: number;
     imageWidth?: number;
+    poster?: string;
 }
 
 interface CarouselProps {
@@ -38,6 +39,7 @@ export function Carousel({ items, frameHeight = 600 }: CarouselProps) {
                             />
                         ) : (
                             <video
+                            poster={item.poster}
                                 autoPlay
                                 muted
                                 loop

@@ -35,7 +35,7 @@ export function Carousel({
 
   return (
     <div className="w-full overflow-x-auto scrollbar-hide">
-      <div className="flex gap-4">
+      <div className="flex gap-4 !pl-10 ">
         {items.map((item, index) => {
           const rawFrameW = isMobile
             ? item.mobile?.frameWidth ?? item.frameWidth
@@ -86,6 +86,7 @@ export function Carousel({
             </div>
           );
         })}
+         <div className="shrink-0 w-6" style={{ height: `${h}px` }} />
       </div>
     </div>
   );

@@ -7,16 +7,16 @@ import { ProjectDetails } from '../ui/ProjectDetails'
 import { PROJECT_LIST } from '@/components/ui/projects'
 
 export default function IndexTable() {
-  const [expandedRow, setExpandedRow] = useState<number | null>(1)
+  const [expandedRow, setExpandedRow] = useState<number | null>(2)
 
   const toggleRow = (id: number) => {
     setExpandedRow(expandedRow === id ? null : id)
   }
 
   return (
-    <section className="!mx-6 !mt-[120px] !mb-8">
+    <section className=" !mt-[120px] !mb-8">
       {/* Header Row */}
-      <GridContainer>
+      <GridContainer className="!mx-6">
         <div className="col-span-3 mid:col-span-4 uppercase !my-1 mobile:hidden">
           <p className="!mx-4">year</p>
         </div>
@@ -38,7 +38,7 @@ export default function IndexTable() {
       {PROJECT_LIST.map((project) => (
         <div key={project.id}>
           <GridContainer
-            className="!border-t !border-[#d9d9d9] cursor-pointer hover:text-[#b1b1b1]"
+            className=" !mx-6 !border-t !border-[#d9d9d9] cursor-pointer hover:text-[#b1b1b1]"
             onClick={() => toggleRow(project.id)}
           >
             <div className="col-span-3 mid:col-span-4 !my-1.25 mobile:hidden">
@@ -70,7 +70,7 @@ export default function IndexTable() {
                 }}
                 className="overflow-hidden"
               >
-                <div className="mx-6 my-4 border-2 border-blue-500 p-4">
+                <div className=" !mx-6 my-4 border-2 border-blue-500 p-4">
                   <ProjectDetails projectId={project.id} />
                 </div>
               </motion.div>
@@ -79,7 +79,7 @@ export default function IndexTable() {
         </div>
       ))}
 
-      <div className="!border-t !border-[#d9d9d9] !pt-2">
+      <div className=" !mx-6 !border-t !border-[#d9d9d9] !pt-2">
         <span className="!ml-4">LAST UPDATE:</span>
         <span className="!ml-1.5">04 FEB 26</span>
       </div>

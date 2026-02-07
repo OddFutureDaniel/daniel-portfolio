@@ -11,7 +11,7 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
 
   return (
     <GridContainer className="!mt-8">
-      <div className="col-span-12">
+      <div className="col-span-12  !-mx-6 ">
         <Carousel
           items={project.carousel.items}
           frameHeight={project.carousel.frameHeight}
@@ -20,9 +20,9 @@ export function ProjectDetails({ projectId }: { projectId: number }) {
         />
       </div>
 
-      <div className="col-span-5 mid:col-span-8 mobile:col-span-10 !mb-8 !mx-4">
+      <div className="col-span-5 mid:col-span-8 mobile:col-span-10 !mb-9 !mx-4 mobile:!mt-4 ">
         <p>{project.description}</p>
-        {isMobile ? <p className="mt-4">Technology: {project.tech}</p> : null}
+        {isMobile ? <p className="!mt-4">Technology: {project.tech}</p> : null}
       </div>
     </GridContainer>
   );

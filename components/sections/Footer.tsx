@@ -105,8 +105,11 @@ export default function Footer() {
           </div>
         </GridContainer>
 
-        <div className="!mt-15 !mb-6">
-          ALL RIGHTS RESERVED 2026 Third Line
+        <div className="!mt-15 !mb-6 flex items-center justify-end gap-2 text-right">
+          <p>ALL RIGHTS RESERVED 2026 Third Line</p>
+          <a href="/privacy" className=" !underline hover:!no-underline !transition">
+            Privacy Policy
+          </a>
         </div>
       </footer>
 

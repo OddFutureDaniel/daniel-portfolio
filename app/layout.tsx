@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Courier_Prime, Press_Start_2P, Graduate, EB_Garamond, Audiowide } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import Link from "next/link";
@@ -13,6 +13,36 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const courierPrime = Courier_Prime({ 
+  weight: '700',
+  subsets: ['latin'],
+  variable: '--font-courier'
+});
+
+const pressStart = Press_Start_2P({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-pixel'
+});
+
+const graduate = Graduate({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-varsity'
+});
+
+const ebGaramond = EB_Garamond({ 
+  weight: '700',
+  subsets: ['latin'],
+  variable: '--font-serif'
+});
+
+const audiowide = Audiowide({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-techno'
 });
 
 export const metadata: Metadata = {
@@ -75,7 +105,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB">
+    <html lang="en-GB" className={`${courierPrime.variable} ${pressStart.variable} ${graduate.variable} ${ebGaramond.variable} ${audiowide.variable}`}>
       <GoogleTagManager gtmId="GTM-T56NNVGR" />
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <CookieNotice />

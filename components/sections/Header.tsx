@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 import { DateDisplay } from "../ui/DateDisplay";
@@ -27,9 +28,7 @@ export default function Header() {
   const [currentFontIndex, setCurrentFontIndex] = useState(0);
 
   useEffect(() => {
-    if (!isHovering) {
-      return;
-    }
+    if (!isHovering) return;
 
     const interval = setInterval(() => {
       setCurrentFontIndex((prev) => (prev + 1) % FONT_STYLES.length);
@@ -41,16 +40,21 @@ export default function Header() {
   return (
     <header className="mx-10! mt-4!">
       <GridContainer>
-        <div 
-          className="col-span-4 mobile:col-span-7 cursor-pointer inline-grid items-center select-none"
+        {/* WORDMARK */}
+        <div
+          className="col-span-4 mobile:col-span-7 cursor-pointer inline-grid items-center select-none mobile:scale-[0.75] origin-left"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
-          style={{ 
+          style={{
             width: 250,
             height: 40,
           }}
         >
-          <div className="row-start-1 col-start-1" style={{ visibility: currentFontIndex === 0 ? 'visible' : 'hidden' }}>
+          {/* SVG LOGO */}
+          <div
+            className="row-start-1 col-start-1"
+            style={{ visibility: currentFontIndex === 0 ? 'visible' : 'hidden' }}
+          >
             <Image
               src="/thirdlinelogoblack.svg"
               alt="Third Line Logo"
@@ -59,18 +63,19 @@ export default function Header() {
               style={{ height: "auto" }}
             />
           </div>
-          
+
+          {/* FONT VARIANTS */}
           {FONT_STYLES.slice(1).map((font, index) => (
-            <div 
+            <div
               key={font.name}
               className="row-start-1 col-start-1"
-              style={{ 
+              style={{
                 fontFamily: font.font,
                 fontSize: font.size,
                 fontWeight: 'bold',
                 whiteSpace: 'nowrap',
                 lineHeight: 1,
-                visibility: currentFontIndex === index + 1 ? 'visible' : 'hidden'
+                visibility: currentFontIndex === index + 1 ? 'visible' : 'hidden',
               }}
             >
               THIRD LINE
@@ -78,10 +83,12 @@ export default function Header() {
           ))}
         </div>
 
+        {/* DATE */}
         <div className="col-span-4 text-center mobile:hidden">
           <DateDisplay />
         </div>
 
+        {/* ABOUT LINK */}
         <motion.a
           className="col-span-4 mobile:col-span-5 uppercase text-right"
           href="#about"

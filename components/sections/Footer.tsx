@@ -59,6 +59,7 @@ export default function Footer() {
             <p>GlowIVDrips</p>
             <p>The Chique Events</p>
             <p>ESTIEE</p>
+            <p>5EB</p>
           </div>
 
           {/* 2) Technologies */}

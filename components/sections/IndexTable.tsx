@@ -92,7 +92,7 @@ export default function IndexTable() {
 
       <div className=" !mx-6 !border-t !border-[#d9d9d9] !pt-2">
         <span className="!ml-4">LAST UPDATE:</span>
-        <span className="!ml-1.5">04 FEB 26</span>
+        <span className="!ml-1.5">09 FEB 26</span>
       </div>
     </section>
   )

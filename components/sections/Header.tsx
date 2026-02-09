@@ -17,8 +17,8 @@ const scrollToAbout = (e: React.MouseEvent<HTMLAnchorElement>) => {
 const FONT_STYLES = [
   { name: 'original', font: 'inherit', size: '0px' },
   { name: 'typewriter', font: 'var(--font-courier)', size: '42px' },
-  { name: 'pixel', font: 'var(--font-pixel)', size: '25px' },
-  { name: 'varsity', font: 'var(--font-varsity)', size: '42px' },
+  // { name: 'pixel', font: 'var(--font-pixel)', size: '25px' },
+  // { name: 'varsity', font: 'var(--font-varsity)', size: '42px' },
   { name: 'serif', font: 'var(--font-serif)', size: '42px' },
   { name: 'techno', font: 'var(--font-techno)', size: '39px' },
 ];

@@ -8,7 +8,7 @@ export default function About() {
           className="
             !col-span-5
             mid:!col-span-6
-            mobile:!col-span-9
+            mobile:!col-span-10
             !mx-4
             !mt-8
           "

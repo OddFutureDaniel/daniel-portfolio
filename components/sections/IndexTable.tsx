@@ -45,8 +45,19 @@ export default function IndexTable() {
               <p className="!mx-4">{project.year}</p>
             </div>
 
-            <div className="col-span-3 mid:col-span-4 mobile:col-span-6 !my-1.25">
+            <div className="col-span-3 mid:col-span-4 mobile:col-span-6 !my-1.25 flex items-center gap-2">
               <p className="mobile:!mx-4">{project.client}</p>
+              <svg 
+                className="mobile:!block !hidden w-4 h-4 flex-shrink-0" 
+                viewBox="0 0 1024 1024" 
+                fill="currentColor"
+              >
+                {expandedRow === project.id ? (
+                  <path d="M759.2 419.8L697.4 358 512 543.4 326.6 358l-61.8 61.8L512 667z" />
+                ) : (
+                  <path d="M419.3 264.8l-61.8 61.8L542.9 512 357.5 697.4l61.8 61.8L666.5 512z" />
+                )}
+              </svg>
             </div>
 
             <div className="col-span-3 mid:col-span-4 mobile:col-span-6 !my-1.25">

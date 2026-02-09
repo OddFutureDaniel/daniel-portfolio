@@ -107,6 +107,8 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${courierPrime.variable} ${pressStart.variable} ${graduate.variable} ${ebGaramond.variable} ${audiowide.variable}`}>
       <GoogleTagManager gtmId="GTM-T56NNVGR" />
+      <link rel="preconnect" href="https://res.cloudinary.com" />
+      <link rel="dns-prefetch" href="https://res.cloudinary.com" />
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <CookieNotice />
         <Link

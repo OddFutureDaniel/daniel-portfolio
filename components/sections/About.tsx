@@ -6,9 +6,9 @@ export default function About() {
       <GridContainer className="!border-t !border-[#d9d9d9]">
         <div
           className="
-            col-span-5
-            mid:col-span-6
-            mobile:col-span-9
+            !col-span-5
+            mid:!col-span-6
+            mobile:!col-span-9
             !mx-4
             !mt-8
           "

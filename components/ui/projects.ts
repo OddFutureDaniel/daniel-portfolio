@@ -40,7 +40,7 @@ export const PROJECTS: Record<number, Project> = {
     description: "For Third Line, the redesign was driven by positioning with intention. A restrained, editorial layout was used to reflect how we approach digital work, prioritising pacing, hierarchy and authored structure over explanation.",
     carousel: {
       frameHeight: 385,
-      mobileFrameHeight: 420,
+      mobileFrameHeight: 300,
       items: [{
         type: "image",
         src: "https://res.cloudinary.com/dzkjoraha/image/upload/q_auto,f_auto/Screenshot_2026-02-05_at_17.56.07_ebxogo",
@@ -171,7 +171,7 @@ export const PROJECTS: Record<number, Project> = {
       "For long-term client SkynMaps, we began with a homepage redesign before refining existing service pages and developing a dedicated booking system, alongside a considered SEO strategy to support long-term visibility.",
     carousel: {
       frameHeight: 385,
-      mobileFrameHeight: 420,
+      mobileFrameHeight: 390,
       items: [
         {
           type: "image",

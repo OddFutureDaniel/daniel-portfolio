@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Press+Start+2P&family=Graduate&family=EB+Garamond:wght@700&family=Audiowide&display=swap');
 @config "../tailwind.config.mjs";
 @import "tailwindcss/preflight";
 @import "tailwindcss";
 /* In globals.css or add to your existing font imports */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Press+Start+2P&family=Graduate&family=EB+Garamond:wght@700&family=Audiowide&display=swap');
 
 @font-face {
     font-family: 'Moderat';

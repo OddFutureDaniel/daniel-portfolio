@@ -630,7 +630,7 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
           onClick={onComplete}
           style={{
             position: 'absolute',
-            bottom: '80px',
+            bottom: '60px',
             padding: '20px 48px',
             fontSize: '16px',
             fontWeight: '500',

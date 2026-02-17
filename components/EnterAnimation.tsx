@@ -415,20 +415,16 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
         const updated = prevLetters.map((letter, index) => {
           if (letter.settled) return letter;
 
-          // Apply gravity
-          const newVelocityY = letter.velocityY + 1.2; // Gravity
+          const newVelocityY = letter.velocityY + 1.2;
           const newY = letter.y + newVelocityY;
 
-          // Check if letter has landed
           if (newY >= letter.targetY) {
-            hasLanded = true;
             return {
               ...letter,
               y: letter.targetY,
               velocityY: 0,
               settled: true,
-              // Arrange horizontally to spell THIRD LINE
-              x: window.innerWidth / 2 - 100 + (index * 22),
+              x: window.innerWidth / 2 - 110 + (index * 22),
             };
           }
 

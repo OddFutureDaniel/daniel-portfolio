@@ -379,26 +379,27 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
   /**
    * Handle character tap on mobile - drops next letter from THIRD LINE
    */
-  const handleCharacterTap = () => {
+
+  const handleCharacterTap = (e?: React.TouchEvent | React.MouseEvent) => {
+    if (e) e.preventDefault();
     const word = "THIRDLINE";
-    if (droppedLetters.length >= word.length) return; // All letters dropped
+    if (droppedLetters.length >= word.length) return;
 
     const nextLetter = word[droppedLetters.length];
     const screenWidth = window.innerWidth;
     const characterCenterX = screenWidth / 2;
-    const characterCenterY = window.innerHeight * 0.45; // Chest area
+    const characterCenterY = window.innerHeight * 0.45;
 
-    // Create new falling letter
     const newLetter: FallingLetter = {
       char: nextLetter,
-      x: characterCenterX + (Math.random() - 0.5) * 20, // Slight randomness
+      x: characterCenterX + (Math.random() - 0.5) * 20,
       y: characterCenterY,
       velocityY: 0,
-      targetY: window.innerHeight * 0.75, // Land at 75% down screen
+      targetY: window.innerHeight * 0.75,
       settled: false,
     };
 
-    setDroppedLetters([...droppedLetters, newLetter]);
+    setDroppedLetters(prev => [...prev, newLetter]);
   };
 
   /**
@@ -531,9 +532,9 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
         {/* ASCII Character - Tappable */}
         <div
           onClick={handleCharacterTap}
-          onTouchEnd={(e) => {
-            e.preventDefault(); // Prevents double-firing on some devices
-            handleCharacterTap();
+          onTouchStart={(e) => {
+            e.preventDefault();
+            handleCharacterTap(e);
           }}
           style={{
             position: 'relative',
@@ -544,10 +545,9 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
             justifyContent: 'center',
             cursor: 'pointer',
             marginBottom: '60px',
-            // Increase touch target
             padding: '20px',
-            touchAction: 'manipulation', // Removes 300ms tap delay
-            WebkitTapHighlightColor: 'transparent', // Removes blue flash on iOS
+            touchAction: 'manipulation',
+            WebkitTapHighlightColor: 'transparent',
           }}
         >
           {/* Draw ASCII character */}
@@ -695,15 +695,15 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
 
           {/* Enter Site Button */}
           <button
-            onClick={onComplete}
-            onTouchEnd={(e) => {
+            onTouchStart={(e) => {
               e.preventDefault();
               onComplete?.();
             }}
+            onClick={onComplete}
             style={{
               position: 'absolute',
               bottom: '80px',
-              padding: '20px 48px', // Bigger tap area
+              padding: '20px 48px',
               fontSize: '16px',
               fontWeight: '500',
               color: '#c6f0fc',
@@ -714,15 +714,15 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
               fontFamily: 'monospace',
               letterSpacing: '1px',
               transition: 'all 0.3s ease',
-              WebkitTapHighlightColor: 'transparent', // Removes blue flash on iOS
-              touchAction: 'manipulation', // Removes 300ms delay on mobile
+              WebkitTapHighlightColor: 'transparent',
+              touchAction: 'manipulation',
             }}
           >
             ENTER SITE
           </button>
-    </>
-  )
-}
+        </>
+      )
+      }
     </div >
   );
 }

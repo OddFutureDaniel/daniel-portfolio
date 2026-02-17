@@ -8,18 +8,18 @@ import IndexTable from "@/components/sections/IndexTable";
 import EnterAnimation from "@/components/EnterAnimation";
 
 export default function Page() {
-  const [showAnimation, setShowAnimation] = useState(true);
+      const [showAnimation, setShowAnimation] = useState(true);
 
-  if (showAnimation) {
-    return <EnterAnimation onComplete={() => setShowAnimation(false)} />;
-  }
+      if (showAnimation) {
+            return <EnterAnimation onComplete={() => setShowAnimation(false)} />;
+      }
 
-  return (
-    <section className="leading-tight">
-      <Header />
-      <IndexTable />
-      <About />
-      <Footer />
-    </section>
-  );
+      return (
+            <section className="leading-tight">
+                  <Header />
+                  <IndexTable />
+                  <About />
+                  <Footer />
+            </section>
+      );
 }

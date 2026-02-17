@@ -382,7 +382,7 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
 
   const handleCharacterTap = (e?: React.TouchEvent | React.MouseEvent) => {
     if (e) e.preventDefault();
-    const word = "THIRDLINE";
+    const word = "THIRD LINE";
     if (droppedLetters.length >= word.length) return;
 
     const nextLetter = word[droppedLetters.length];

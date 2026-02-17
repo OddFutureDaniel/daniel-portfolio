@@ -51,16 +51,16 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
   const [droppedLetters, setDroppedLetters] = useState<FallingLetter[]>([]);
 
 
-const [showTap, setShowTap] = useState<boolean>(true);
-const [tapFading, setTapFading] = useState<boolean>(false);
+  const [showTap, setShowTap] = useState<boolean>(true);
+  const [tapFading, setTapFading] = useState<boolean>(false);
 
-useEffect(() => {
-  if (droppedLetters.length >= 1 && showTap) {
-    setTapFading(true);
-    setTimeout(() => setShowTap(false), 800);
-  }
-}, [droppedLetters.length]);
-  
+  useEffect(() => {
+    if (droppedLetters.length >= 1 && showTap) {
+      setTapFading(true);
+      setTimeout(() => setShowTap(false), 800);
+    }
+  }, [droppedLetters.length]);
+
   // Character state object - stores position, animation frame, and movement data
   let character: Character = {
     x: 0,                    // Current horizontal position on screen
@@ -70,27 +70,27 @@ useEffect(() => {
     frameTimer: 0,           // Counter to control frame rate of animation
     direction: 'right',      // Which direction character is facing ('left' or 'right')
   };
-  
+
   // Variables to hold the loaded sprite sheet images
   let walkLeftSheet: p5Type.Image;         // Sprite sheet for walking left animation
   let walkRightSheet: p5Type.Image;        // Sprite sheet for walking right animation
-  
+
   // Stores processed pixel data from sprite sheets
   // Each frame is converted to an array of {x, y, char} points
   let framePixelData: FramePixelData = {
     left: [],                // Array of point arrays for left-walking frames
     right: [],               // Array of point arrays for right-walking frames
   };
-  
+
   // Y-coordinate of the invisible platform the character stands on
   let platformY: number;
-  
+
   // Animation configuration constants
   const TOTAL_FRAMES = 9;           // Total frames in sprite sheet (8 walk + 1 idle)
   const TOTAL_WALK_FRAMES = 8;      // Number of frames in the walking cycle
   const IDLE_FRAME = 8;             // Index of the idle/standing frame (last frame)
   const FRAME_RATE = 8;             // How many frames per second to animate
-  
+
   // Sprite sheet layout configuration
   const COLS = 9;                   // Number of columns in sprite sheet (single row of 9)
   const ROWS = 1;                   // Number of rows in sprite sheet
@@ -128,22 +128,22 @@ useEffect(() => {
   const setup = (p5: p5Type, canvasParentRef: Element) => {
     // Create canvas that fills the entire browser window
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
-    
+
     // ADJUST PLATFORM HEIGHT: Lower number = higher on screen, higher number = lower on screen
     // 0.4 = 40% down from top (higher up), 0.6 = 60% down (lower down)
     platformY = p5.height * 0.5;
-    
+
     // Initialize character at center of screen horizontally
     character.x = p5.width / 2;
     // Place character on the platform
     character.y = platformY;
     // Set initial target position to center (no movement at start)
     character.targetX = p5.width / 2;
-    
+
     // Process sprite sheets to extract ASCII character positions
     extractSilhouettes(p5);
   };
-  
+
   /**
    * p5.js windowResized function - called whenever browser window is resized
    * Updates canvas size and platform position
@@ -182,18 +182,18 @@ useEffect(() => {
   const extractFramePoints = (p5: p5Type, sheet: p5Type.Image, frameNum: number): Point[] => {
     // Load pixel data from the sprite sheet image into memory
     sheet.loadPixels();
-    
+
     // Calculate which column this frame is in (since it's a single row, col = frameNum)
     let col = frameNum;
     // Row is always 0 since sprite sheet is a single row
     let row = 0;
-    
+
     // Array to store the extracted points for this frame
     let points: Point[] = [];
-    
+
     // Density controls spacing between ASCII characters (higher = fewer chars, more sparse)
     const density = 5;
-    
+
     // Loop through the frame's pixels vertically, stepping by density
     for (let y = 0; y < FRAME_HEIGHT; y += density) {
       // Loop through the frame's pixels horizontally, stepping by density
@@ -201,13 +201,13 @@ useEffect(() => {
         // Calculate actual pixel position in the full sprite sheet
         let pixelX = col * FRAME_WIDTH + x;
         let pixelY = row * FRAME_HEIGHT + y;
-        
+
         // Calculate index in the pixels array (4 values per pixel: R, G, B, A)
         let index = (pixelX + pixelY * sheet.width) * 4;
-        
+
         // Get alpha (transparency) value of this pixel
         let alpha = sheet.pixels[index + 3];
-        
+
         // If pixel is mostly opaque (part of the silhouette)
         if (alpha > 50) {
           // Add a point with position relative to frame center and random ASCII char
@@ -219,10 +219,10 @@ useEffect(() => {
         }
       }
     }
-    
+
     // Log how many points were found (useful for debugging)
     console.log(`Frame ${frameNum} extracted ${points.length} points`);
-    
+
     // Return the array of points for this frame
     return points;
   };
@@ -234,7 +234,7 @@ useEffect(() => {
   const randomChar = (): string => {
     // String of all characters that can be used to draw the silhouette
     const chars = "!@#$%^&%^Œ()_+-=[]{}|;:,Ÿ.<>?/~`aæbcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    
+
     // Return a random character from the string
     return chars[Math.floor(Math.random() * chars.length)];
   };
@@ -244,46 +244,46 @@ useEffect(() => {
    * Handles character movement, frame animation, and rendering
    * @param p5 - p5.js instance
    */
-  const draw = (p5: p5Type) => { 
+  const draw = (p5: p5Type) => {
     // Clear the screen with black background each frame
     p5.background(0);
-  
+
     // Desktop behavior (not mobile)
     if (!isMobile) {
       // Update target position to follow mouse cursor
       character.targetX = p5.mouseX;
-      
+
       // Calculate horizontal distance between character and cursor
       let distanceX = character.targetX - character.x;
-      
+
       // Character is "moving" if cursor is more than 10px away
       let isMoving = p5.abs(distanceX) > 10;
-      
+
       // If character should be moving
       if (isMoving) {
         // Determine direction based on cursor position
         character.direction = distanceX > 0 ? 'right' : 'left';
-        
+
         // Calculate movement direction (-1 for left, +1 for right)
         let stepDirection = distanceX > 0 ? 1 : -1;
-        
+
         // Move character towards cursor at 2.5 pixels per frame
         character.x += stepDirection * 2.5;
-        
+
         // Increment frame timer to track when to change animation frames
         character.frameTimer++;
-        
+
         // Check if enough time has passed to show next frame (60 / FRAME_RATE)
         if (character.frameTimer >= 60 / FRAME_RATE) {
           // Advance to next frame, looping back to 0 after frame 7
           character.currentFrame = (character.currentFrame + 1) % TOTAL_WALK_FRAMES;
-          
+
           // Reset frame timer
           character.frameTimer = 0;
-          
+
           // Get the point data for the new current frame
           let currentPoints = framePixelData[character.direction][character.currentFrame];
-          
+
           // If points exist for this frame
           if (currentPoints) {
             // Randomize all the ASCII characters in this frame for animated effect
@@ -294,21 +294,21 @@ useEffect(() => {
         }
       } else {
         // Character is idle (cursor is close)
-        
+
         // Switch to idle frame (frame 8)
         character.currentFrame = IDLE_FRAME;
-        
+
         // Continue frame timer even when idle to animate ASCII chars
         character.frameTimer++;
-        
+
         // Check if enough time has passed to randomize characters
         if (character.frameTimer >= 60 / FRAME_RATE) {
           // Reset frame timer
           character.frameTimer = 0;
-          
+
           // Get the idle frame's point data
           let idlePoints = framePixelData[character.direction][IDLE_FRAME];
-          
+
           // If idle points exist
           if (idlePoints) {
             // Randomize all ASCII characters in idle frame for living/glitchy effect
@@ -318,14 +318,14 @@ useEffect(() => {
           }
         }
       }
-      
+
       // Keep character within bounds (200px from edges)
       character.x = p5.constrain(character.x, 200, p5.width - 200);
     }
-  
+
     // Update character's vertical position to stay on platform
     character.y = platformY;
-    
+
     // Draw the ASCII character at its current position and frame
     drawASCIICharacter(p5);
   };
@@ -337,32 +337,32 @@ useEffect(() => {
   const drawASCIICharacter = (p5: p5Type) => {
     // Safety check: don't draw if frame data hasn't loaded yet
     if (framePixelData.left.length === 0) return;
-    
+
     // Save current drawing state (position, rotation, scale)
     p5.push();
-    
+
     // Move drawing origin to character's position
     p5.translate(character.x, character.y);
-    
+
     // ADJUST CHARACTER HEIGHT: Change this number to make character bigger/smaller
     // 1.5 = current size, 2.0 = bigger, 1.0 = smaller
     p5.scale(1.5);
-    
+
     // Set text color to #c6f0fc (cyan-ish color)
     p5.fill('#c6f0fc');
-    
+
     // Don't draw outline around characters
     p5.noStroke();
-    
+
     // Center text both horizontally and vertically
     p5.textAlign(p5.CENTER, p5.CENTER);
-    
+
     // Set the size of the ASCII characters
     p5.textSize(4.5);
-    
+
     // Get the array of points for the current direction and frame
     let points = framePixelData[character.direction][character.currentFrame];
-    
+
     // If points exist for this frame
     if (points) {
       // Loop through each point and draw its character
@@ -371,7 +371,7 @@ useEffect(() => {
         p5.text(point.char, point.x, point.y);
       }
     }
-    
+
     // Restore previous drawing state
     p5.pop();
   };
@@ -382,12 +382,12 @@ useEffect(() => {
   const handleCharacterTap = () => {
     const word = "THIRDLINE";
     if (droppedLetters.length >= word.length) return; // All letters dropped
-    
+
     const nextLetter = word[droppedLetters.length];
     const screenWidth = window.innerWidth;
     const characterCenterX = screenWidth / 2;
     const characterCenterY = window.innerHeight * 0.45; // Chest area
-    
+
     // Create new falling letter
     const newLetter: FallingLetter = {
       char: nextLetter,
@@ -397,7 +397,7 @@ useEffect(() => {
       targetY: window.innerHeight * 0.75, // Land at 75% down screen
       settled: false,
     };
-    
+
     setDroppedLetters([...droppedLetters, newLetter]);
   };
 
@@ -410,7 +410,7 @@ useEffect(() => {
     const interval = setInterval(() => {
       setDroppedLetters(prevLetters => {
         let hasLanded = false;
-        
+
         const updated = prevLetters.map((letter, index) => {
           if (letter.settled) return letter;
 
@@ -438,7 +438,7 @@ useEffect(() => {
           };
         });
 
-      
+
 
         return updated;
       });
@@ -452,7 +452,7 @@ useEffect(() => {
    */
   const MobileEnterAnimation = () => {
     const [mobileFrameData, setMobileFrameData] = useState<Point[]>([]);
-  
+
 
     // Extract idle frame on mount
     useEffect(() => {
@@ -531,6 +531,10 @@ useEffect(() => {
         {/* ASCII Character - Tappable */}
         <div
           onClick={handleCharacterTap}
+          onTouchEnd={(e) => {
+            e.preventDefault(); // Prevents double-firing on some devices
+            handleCharacterTap();
+          }}
           style={{
             position: 'relative',
             width: '300px',
@@ -540,6 +544,10 @@ useEffect(() => {
             justifyContent: 'center',
             cursor: 'pointer',
             marginBottom: '60px',
+            // Increase touch target
+            padding: '20px',
+            touchAction: 'manipulation', // Removes 300ms tap delay
+            WebkitTapHighlightColor: 'transparent', // Removes blue flash on iOS
           }}
         >
           {/* Draw ASCII character */}
@@ -643,7 +651,7 @@ useEffect(() => {
    */
   return (
     // Fixed position container covering entire viewport
-    <div style={{ 
+    <div style={{
       position: 'fixed',      // Fixed positioning to stay in place
       top: 0,                 // Align to top of viewport
       left: 0,                // Align to left of viewport
@@ -656,7 +664,7 @@ useEffect(() => {
       ) : (
         <>
           {/* p5.js Sketch component with required lifecycle functions */}
-          <Sketch 
+          <Sketch
             preload={preload}              // Load images before setup
             setup={setup}                  // Initialize canvas and character
             draw={draw}                    // Main animation loop
@@ -664,7 +672,7 @@ useEffect(() => {
           />
 
           {/* WORDMARK - Top Left */}
-          <div 
+          <div
             className="!mx-10 !mt-6"
             style={{
               position: 'absolute',
@@ -678,9 +686,9 @@ useEffect(() => {
               alt="Third Line Logo"
               width={250}
               height={40}
-              style={{ 
+              style={{
                 height: "auto",
-                
+
               }}
             />
           </div>
@@ -688,37 +696,33 @@ useEffect(() => {
           {/* Enter Site Button */}
           <button
             onClick={onComplete}
+            onTouchEnd={(e) => {
+              e.preventDefault();
+              onComplete?.();
+            }}
             style={{
               position: 'absolute',
-              left: '50%',
-              top: '80%',  // Positioned below character (adjust if needed)
-              transform: 'translateX(-50%)',
-              padding: '12px 32px',
+              bottom: '80px',
+              padding: '20px 48px', // Bigger tap area
               fontSize: '16px',
               fontWeight: '500',
-              color: '#cffcf8',
+              color: '#c6f0fc',
               backgroundColor: 'transparent',
-              border: '2px solid #cffcf8',
+              border: '2px solid #c6f0fc',
               borderRadius: '4px',
               cursor: 'pointer',
               fontFamily: 'monospace',
               letterSpacing: '1px',
               transition: 'all 0.3s ease',
-              zIndex: 10000,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#cffcf8';
-              e.currentTarget.style.color = '#000';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#cffcf8';
+              WebkitTapHighlightColor: 'transparent', // Removes blue flash on iOS
+              touchAction: 'manipulation', // Removes 300ms delay on mobile
             }}
           >
             ENTER SITE
           </button>
-        </>
-      )}
-    </div>
+    </>
+  )
+}
+    </div >
   );
 }

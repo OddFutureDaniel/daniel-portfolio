@@ -500,7 +500,7 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
             char: randomChar(),
           }))
         );
-      }, 1000 / 8);
+      }, 200);
 
       return () => clearInterval(interval);
     }, []);

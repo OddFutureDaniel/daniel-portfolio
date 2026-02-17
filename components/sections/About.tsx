@@ -17,7 +17,7 @@ export default function About() {
           <span>
             Third Line is a web design studio focused on defining digital
             experiences through strategic creativity. We work with clients who
-            value taste, vision and intention, designing considered work where
+            value taste, vision and intention; designing considered work where
             form, structure and purpose are closely aligned.
           </span>
         </div>

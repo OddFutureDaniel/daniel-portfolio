@@ -15,7 +15,8 @@
     "motion": "^12.23.25",
     "next": "^16.0.10",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-p5": "^1.4.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

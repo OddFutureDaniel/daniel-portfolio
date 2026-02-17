@@ -1,8 +1,8 @@
 // components/Carousel.tsx
-import Image from "next/image";
+import Image from 'next/image';
 
 interface CarouselItem {
-  type: "image" | "video";
+  type: 'image' | 'video';
   src: string;
   alt?: string;
   frameWidth: number;
@@ -35,13 +35,12 @@ export function Carousel({
 
   return (
     <div className="w-full overflow-x-auto scrollbar-hide">
-      <div className="flex gap-4 !pl-10 ">
+      <div className="flex gap-4 pl-6">
         {items.map((item, index) => {
           const rawFrameW = isMobile
             ? item.mobile?.frameWidth ?? item.frameWidth
             : item.frameWidth;
 
-          // Safety: don't let frames exceed the viewport on mobile
           const frameW = isMobile ? clamp(rawFrameW, 220, 420) : rawFrameW;
 
           const rawImgW = isMobile
@@ -59,15 +58,16 @@ export function Carousel({
               className="shrink-0 bg-[#d9d9d9]/20 flex items-center justify-center overflow-hidden"
               style={{ height: `${h}px`, width: `${frameW}px` }}
             >
-              {item.type === "image" ? (
+              {item.type === 'image' ? (
                 <Image
                   src={item.src}
-                  alt={item.alt || ""}
+                  alt={item.alt || ''}
                   width={imgW}
                   height={h}
                   quality={100}
-                  className="object-contain h-auto"
-                  sizes={`${frameW}px`}
+                  priority
+                  sizes={`(max-width: 768px) ${imgW}px, ${imgW}px`}
+                  className="object-contain"
                 />
               ) : (
                 <video
@@ -86,7 +86,7 @@ export function Carousel({
             </div>
           );
         })}
-         <div className="shrink-0 w-6" style={{ height: `${h}px` }} />
+        <div className="shrink-0 w-6" style={{ height: `${h}px` }} />
       </div>
     </div>
   );

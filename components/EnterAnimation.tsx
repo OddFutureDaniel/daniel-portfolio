@@ -697,6 +697,7 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
           </div>
 
           {/* Enter Site Button */}
+
           <button
             onTouchStart={(e) => {
               e.preventDefault();
@@ -705,6 +706,8 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
             onClick={onComplete}
             style={{
               position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
               bottom: '80px',
               padding: '20px 48px',
               fontSize: '16px',

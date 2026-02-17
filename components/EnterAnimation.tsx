@@ -621,12 +621,17 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
         ))}
 
         {/* Enter Site Button */}
+        {/* Enter Site Button */}
         <button
+          onTouchStart={(e) => {
+            e.preventDefault();
+            onComplete?.();
+          }}
           onClick={onComplete}
           style={{
             position: 'absolute',
             bottom: '80px',
-            padding: '12px 32px',
+            padding: '20px 48px',
             fontSize: '16px',
             fontWeight: '500',
             color: '#c6f0fc',
@@ -637,6 +642,8 @@ export default function EnterAnimation({ onComplete }: EnterAnimationProps) {
             fontFamily: 'monospace',
             letterSpacing: '1px',
             transition: 'all 0.3s ease',
+            WebkitTapHighlightColor: 'transparent',
+            touchAction: 'manipulation',
           }}
         >
           ENTER SITE

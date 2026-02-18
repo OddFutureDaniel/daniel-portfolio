@@ -6,6 +6,8 @@ import Footer from "@/components/sections/Footer";
 import Header from "@/components/sections/Header";
 import IndexTable from "@/components/sections/IndexTable";
 import EnterAnimation from "@/components/EnterAnimation";
+import ThreeDPreloader from "@/components/ThreeDPreloader"
+import JaffaTest from '@/components/JaffaTest';
 
 export default function Page() {
       const [showAnimation, setShowAnimation] = useState(true);
@@ -13,6 +15,10 @@ export default function Page() {
       if (showAnimation) {
             return <EnterAnimation onComplete={() => setShowAnimation(false)} />;
       }
+          
+            // if (showAnimation) {
+            //   return <JaffaTest onComplete={() => setShowAnimation(false)} />;
+            // }
 
       return (
             <section className="leading-tight">
